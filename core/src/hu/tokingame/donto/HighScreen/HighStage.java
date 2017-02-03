@@ -5,6 +5,7 @@ import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.utils.viewport.Viewport;
 
+import java.util.Collections;
 import java.util.Vector;
 
 import hu.tokingame.donto.Game1.DeathStage;
@@ -31,13 +32,15 @@ public class HighStage extends MyStage {
     public HighStage(Viewport viewport, Batch batch, MyGdxGame game) {
         super(viewport, batch, game);
 
-
     }
 
 
     @Override
     public void init() {
         HighStage = this;
+
+        Collections.sort(Globals.MaxScores);
+        Collections.reverse(Globals.MaxScores);
 
         addActor(new OneSpriteStaticActor(Assets.manager.get(Assets.MENUHATTER)){
             @Override
