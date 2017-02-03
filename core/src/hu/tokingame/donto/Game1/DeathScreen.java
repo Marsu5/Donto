@@ -17,15 +17,15 @@ import hu.tokingame.donto.MyGdxGame;
 public class DeathScreen extends MyScreen{
     private DeathStage stage;
 
-    public DeathScreen(MyGdxGame game) {
+    public DeathScreen(MyGdxGame game, int score) {
         super(game);
+        stage = new DeathStage(new ExtendViewport(Globals.WORLD_WIDTH,Globals.WORLD_HEIGHT,new OrthographicCamera(Globals.WORLD_WIDTH,Globals.WORLD_HEIGHT)),new SpriteBatch(),game,score);
+        Gdx.input.setInputProcessor(stage);
     }
 
     @Override
     public void init() {
         super.init();
-        stage = new DeathStage(new ExtendViewport(Globals.WORLD_WIDTH,Globals.WORLD_HEIGHT,new OrthographicCamera(Globals.WORLD_WIDTH,Globals.WORLD_HEIGHT)),new SpriteBatch(),game);
-        Gdx.input.setInputProcessor(stage);
     }
 
     @Override

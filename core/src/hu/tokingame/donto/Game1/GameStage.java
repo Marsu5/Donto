@@ -62,7 +62,7 @@ public class GameStage extends MyStage {
         box2DDebugRenderer = new Box2DDebugRenderer();
         loader = new WorldBodyEditorLoader(Gdx.files.internal("phys.json"));
 
-        addActor(new LevelBottomSensor(world,0,0));
+        addActor(new LevelBottomSensor(world,1,1));
 
         world.setContactListener(new ContactListener() {
             @Override
@@ -71,6 +71,7 @@ public class GameStage extends MyStage {
                         contact.getFixtureA().getUserData() instanceof LevelBottomSensor && contact.getFixtureB().getUserData() instanceof PigActor) {
                     System.out.println("collision");
                     hp--;
+                    pigCount--;
 
                 }
 
@@ -123,7 +124,7 @@ public class GameStage extends MyStage {
         }
 
         if(hp == 0){
-            //// TODO: 2/3/2017 halál képernyő
+            game.setScreen(new DeathScreen(game,score));
             System.out.println("dead");
         }
 

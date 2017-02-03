@@ -15,8 +15,9 @@ public class DeathStage extends MyStage {
 
     private DeathStage DeathStage;
 
-    public DeathStage(Viewport viewport, Batch batch, MyGdxGame game) {
+    public DeathStage(Viewport viewport, Batch batch, MyGdxGame game, int score) {
         super(viewport, batch, game);
+
     }
 
 
