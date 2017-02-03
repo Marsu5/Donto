@@ -58,6 +58,12 @@ public class Assets {
     public static final AssetDescriptor<Texture> PIA3 = new AssetDescriptor<Texture>("textures/pohar.png", Texture.class);
     public static final AssetDescriptor<Texture> KENYER = new AssetDescriptor<Texture>("textures/kenyer.png", Texture.class);
 
+    public static final AssetDescriptor<Texture> GAME2_HATTER = new AssetDescriptor<Texture>("textures/game2hatter.jpg", Texture.class);
+    public static final AssetDescriptor<Texture> GAME2_TAKAR1 = new AssetDescriptor<Texture>("textures/takaro1.png", Texture.class);
+    public static final AssetDescriptor<Texture> GAME2_TAKAR2 = new AssetDescriptor<Texture>("textures/takaro2.png", Texture.class);
+    public static final AssetDescriptor<Texture> GAME2_TAKAR3 = new AssetDescriptor<Texture>("textures/takaro3.png", Texture.class);
+    public static final AssetDescriptor<Texture> GAME2_TAKAR4 = new AssetDescriptor<Texture>("textures/takaro4.png", Texture.class);
+
     //</editor-fold>
 
     //<editor-fold desc="Music">
@@ -95,6 +101,12 @@ public class Assets {
         manager.load(PIA2);
         manager.load(PIA3);
         manager.load(KENYER);
+
+        manager.load(GAME2_HATTER);
+        manager.load(GAME2_TAKAR1);
+        manager.load(GAME2_TAKAR2);
+        manager.load(GAME2_TAKAR3);
+        manager.load(GAME2_TAKAR4);
         //</editor-fold>
 
     }

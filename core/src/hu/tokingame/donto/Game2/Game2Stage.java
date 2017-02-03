@@ -33,7 +33,7 @@ import hu.tokingame.donto.MyGdxGame;
 public class Game2Stage extends MyStage {
     protected InputMultiplexer inputMultiplexer = new InputMultiplexer();
 
-    //private ControlStage controlStage;
+    private ControlStage controlStage;
     World world;
     Box2DDebugRenderer box2DDebugRenderer;
     WorldBodyEditorLoader loader;
@@ -53,7 +53,7 @@ public class Game2Stage extends MyStage {
 
     public Game2Stage(MyGdxGame game) {
         super(new ExtendViewport(16,9,new OrthographicCamera(16,9)), new SpriteBatch(), game);
-        //controlStage = new ControlStage(game, this);
+        controlStage = new ControlStage(game, this);
         inputMultiplexer.addProcessor(this);
         //inputMultiplexer.addProcessor(controlStage);
         Gdx.input.setInputProcessor(inputMultiplexer);
@@ -64,7 +64,7 @@ public class Game2Stage extends MyStage {
         box2DDebugRenderer = new Box2DDebugRenderer();
         loader = new WorldBodyEditorLoader(Gdx.files.internal("phys.json"));
 
-        addActor(new OneSpriteStaticActor(Assets.manager.get(Assets.HATTER)){
+        addActor(new OneSpriteStaticActor(Assets.manager.get(Assets.GAME2_HATTER)){
             @Override
             public void init() {
                 super.init();
@@ -74,33 +74,7 @@ public class Game2Stage extends MyStage {
         });
 
 
-        /*world.setContactListener(new ContactListener() {
-            @Override
-            public void beginContact(Contact contact) {
-                if (contact.getFixtureA().getUserData() instanceof PigActor && contact.getFixtureB().getUserData() instanceof LevelBottomSensor ||
-                        contact.getFixtureA().getUserData() instanceof LevelBottomSensor && contact.getFixtureB().getUserData() instanceof PigActor) {
-                    System.out.println("collision");
-                    hp--;
-                    pigCount--;
-                }
 
-            }
-
-            @Override
-            public void endContact(Contact contact) {
-
-            }
-
-            @Override
-            public void preSolve(Contact contact, Manifold oldManifold) {
-
-            }
-
-            @Override
-            public void postSolve(Contact contact, ContactImpulse impulse) {
-
-            }
-        });*/
 
 
 
@@ -121,7 +95,7 @@ public class Game2Stage extends MyStage {
     @Override
     public void act(float delta) {
         super.act(delta);
-        //controlStage.act();
+        controlStage.act();
         world.step(delta, 10, 10);
         elapsedTime  += delta;
 
@@ -144,7 +118,7 @@ public class Game2Stage extends MyStage {
     @Override
     public void draw() {
         super.draw();
-        //controlStage.draw();
+        controlStage.draw();
     }
 
 
@@ -156,7 +130,7 @@ public class Game2Stage extends MyStage {
 
     @Override
     public void dispose() {
-        //controlStage.dispose();
+        controlStage.dispose();
         super.dispose();
     }
 
