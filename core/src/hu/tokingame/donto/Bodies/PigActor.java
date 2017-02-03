@@ -7,6 +7,7 @@ import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 
 import hu.tokingame.donto.Game1.GameStage;
 import hu.tokingame.donto.Global.Assets;
+import hu.tokingame.donto.Global.Globals;
 import hu.tokingame.donto.MyBaseClasses.OneSpriteStaticActor;
 import hu.tokingame.donto.MyBaseClasses.ShapeType;
 import hu.tokingame.donto.MyBaseClasses.WorldActorGroup;
@@ -19,6 +20,7 @@ import hu.tokingame.donto.MyBaseClasses.WorldBodyEditorLoader;
 public class PigActor extends WorldActorGroup {
     private OneSpriteStaticActor actor;
     private GameStage gameStage;
+    private float rotateRef;
 
     public PigActor(World world, WorldBodyEditorLoader loader, float x, float y, GameStage stage) {
         super(world, loader, "sample", BodyDef.BodyType.DynamicBody, 0, 0.2f, 5, false);
@@ -29,6 +31,9 @@ public class PigActor extends WorldActorGroup {
         actor.setSize(2f,1f);
         addActor(actor);
         setPosition(x,y);
+
+        rotateRef = Globals.randomF(-300, 300);
+
         addListener(new ClickListener(){
             @Override
             public boolean touchDown(InputEvent event, float x, float y, int pointer, int button) {
@@ -44,5 +49,10 @@ public class PigActor extends WorldActorGroup {
         removeFromWorld();
     }
 
-
+    @Override
+    public void act(float delta) {
+        super.act(delta);
+        if(getBody() == null) return;
+        getBody().applyTorque(rotateRef * delta * 10, true);
+    }
 }

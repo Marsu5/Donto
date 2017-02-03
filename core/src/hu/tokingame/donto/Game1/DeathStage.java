@@ -26,7 +26,7 @@ public class DeathStage extends MyStage {
     public DeathStage(Viewport viewport, Batch batch, MyGdxGame game, int score) {
         super(viewport, batch, game);
 
-        addActor(new MyLabel("You Died. \n Your score was:"+score, MyLabel.style1){
+        addActor(new MyLabel("Meghaltál.\nA pontszámod: "+score, MyLabel.style1){
             @Override
             public void init() {
                 super.init();
