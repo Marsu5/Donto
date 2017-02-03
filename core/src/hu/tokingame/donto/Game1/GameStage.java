@@ -36,6 +36,9 @@ public class GameStage extends MyStage {
 
     float elapsedTime = 0;
 
+    private int hp = 3;
+    private int score = 0;
+
     int rdm(int a, int b){return (int)(Math.random()*(b-a+1)+a);}
 
 
@@ -48,10 +51,10 @@ public class GameStage extends MyStage {
     }
     @Override
     public void init() {
-        world = new World(new Vector2(0, -15), false);
+        world = new World(new Vector2(0, -5), false);
         box2DDebugRenderer = new Box2DDebugRenderer();
         loader = new WorldBodyEditorLoader(Gdx.files.internal("phys.json"));
-        addActor(character = new PigActor(world, loader,5,9));
+        addActor(character = new PigActor(world, loader,5,9,this));
 
 
 
@@ -104,6 +107,9 @@ public class GameStage extends MyStage {
         controlStage.act();
         world.step(delta, 10, 10);
         elapsedTime  += delta;
+        if(hp == 0){
+            //// TODO: 2/3/2017 halál képernyő
+        }
     }
 
     @Override
@@ -123,5 +129,15 @@ public class GameStage extends MyStage {
     public void dispose() {
         controlStage.dispose();
         super.dispose();
+    }
+
+    public int getScore(){
+        return score;
+    }
+
+    public void incrementScore(){
+        System.out.println("k"+score);
+        score++;
+        System.out.println("v"+score);
     }
 }
