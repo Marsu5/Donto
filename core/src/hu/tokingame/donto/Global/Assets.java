@@ -1,6 +1,7 @@
 package hu.tokingame.donto.Global;
 
 import com.badlogic.gdx.assets.AssetDescriptor;
+import com.badlogic.gdx.assets.AssetErrorListener;
 import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.assets.loaders.FileHandleResolver;
 import com.badlogic.gdx.assets.loaders.resolvers.InternalFileHandleResolver;
@@ -82,7 +83,7 @@ public class Assets {
     public static final AssetDescriptor<Sound> VISITAS1 = new AssetDescriptor<Sound>("sounds/squeal1.mp3", Sound.class);
     public static final AssetDescriptor<Sound> VISITAS2 = new AssetDescriptor<Sound>("sounds/squeal2.mp3", Sound.class);
     public static final AssetDescriptor<Sound> VISITAS3 = new AssetDescriptor<Sound>("sounds/squeal3.mp3", Sound.class);
-
+    public static final AssetDescriptor<Music> MUSIC = new AssetDescriptor<Music>("sounds/zene.mp3", Music.class);
     //</editor-fold>
 
 
@@ -126,12 +127,14 @@ public class Assets {
         manager.load(VISITAS1);
         manager.load(VISITAS2);
         manager.load(VISITAS3);
+        manager.load(MUSIC);
         //</editor-fold>
 
     }
 
     public static void afterLoaded(){
-
+        Assets.manager.get(Assets.MUSIC).setLooping(true);
+        Assets.manager.get(Assets.MUSIC).play();
     }
 
     public static void unload(){
