@@ -42,8 +42,13 @@ public class Assets {
 
 
 
-    //<editor-fold desc="Map Elements">
+    //<editor-fold desc="nem">
     public static final AssetDescriptor<Texture> BL = new AssetDescriptor<Texture>("badlogic.jpg", Texture.class);
+    public static final AssetDescriptor<Texture> RONK = new AssetDescriptor<Texture>("textures/fa.png", Texture.class);
+    public static final AssetDescriptor<Texture> HATTER = new AssetDescriptor<Texture>("textures/hatter.png", Texture.class);
+    public static final AssetDescriptor<Texture> MALAC = new AssetDescriptor<Texture>("textures/malac.PNG", Texture.class);
+    public static final AssetDescriptor<Texture> MALAC_FEJ = new AssetDescriptor<Texture>("textures/malac-fej.png", Texture.class);
+    public static final AssetDescriptor<Texture> MALAC_SEGG = new AssetDescriptor<Texture>("textures/malac-segg.png", Texture.class);
     //</editor-fold>
 
     //<editor-fold desc="Music">
@@ -68,6 +73,11 @@ public class Assets {
         manager.load(ANTON_FONT);
         manager.load(ANTON_FONT_B);
         manager.load(BL);
+        manager.load(RONK);
+        manager.load(HATTER);
+        manager.load(MALAC);
+        manager.load(MALAC_FEJ);
+        manager.load(MALAC_SEGG);
         //</editor-fold>
 
     }

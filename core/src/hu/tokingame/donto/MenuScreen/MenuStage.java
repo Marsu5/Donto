@@ -37,7 +37,7 @@ public class MenuStage extends MyStage {
     @Override
     public void init() {
 
-        addActor(new BackgroundTextButton("Play"){
+        addActor(new BackgroundTextButton("Játék"){
             @Override
             protected void init() {
                 super.init();

@@ -140,4 +140,8 @@ public class GameStage extends MyStage {
         score++;
         System.out.println("v"+score);
     }
+
+    public int getHp() {
+        return hp;
+    }
 }

@@ -21,10 +21,26 @@ import hu.tokingame.donto.MyGdxGame;
 public class ControlStage extends MyStage {
 
     GameStage gameStage;
+    MyLabel pontLabel, hpLabel;
 
     public ControlStage(MyGdxGame game, GameStage sg) {
         super(new ExtendViewport(Globals.WORLD_WIDTH,Globals.WORLD_HEIGHT,new OrthographicCamera(Globals.WORLD_WIDTH,Globals.WORLD_HEIGHT)),new SpriteBatch(), game);
         gameStage = sg;
+
+        addActor(pontLabel = new MyLabel("Pont: "+ gameStage.getScore(), game.getLabelStyle()){
+            @Override
+            public void init() {
+                super.init();
+                setPosition(0, Globals.WORLD_HEIGHT-this.getHeight());
+            }
+        });
+        addActor(hpLabel = new MyLabel("Hápé: "+ gameStage.getHp(), game.getLabelStyle()){
+            @Override
+            public void init() {
+                super.init();
+                setPosition(0, Globals.WORLD_HEIGHT-this.getHeight()*2);
+            }
+        });
 
     }
 
@@ -37,6 +53,8 @@ public class ControlStage extends MyStage {
     @Override
     public void act(float delta) {
         super.act(delta);
+        setPontLabel(gameStage.getScore());
+        setHpLabel(gameStage.getHp());
     }
 
     @Override
@@ -55,5 +73,13 @@ public class ControlStage extends MyStage {
                 });
             }
         });
+
     }
+    public void setPontLabel(int sc){
+        pontLabel.setText("Pont: "+sc);
+    }
+    public void setHpLabel(int h){
+        hpLabel.setText("Hápé: "+h);
+    }
+
 }
