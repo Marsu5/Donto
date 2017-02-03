@@ -78,7 +78,7 @@ public class GameStage extends MyStage {
 
         addActor(character = new PigActor(world, loader,5,9,this));
 
-        addActor(new LevelBottomSensor(world, loader, 0, 0));
+        addActor(new LevelBottomSensor(world, loader, -1, 0));
 
         world.setContactListener(new ContactListener() {
             @Override
