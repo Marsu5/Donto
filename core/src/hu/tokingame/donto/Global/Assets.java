@@ -65,12 +65,14 @@ public class Assets {
     public static final AssetDescriptor<Texture> MENUHATTER = new AssetDescriptor<Texture>("textures/menuhatter.png", Texture.class);
     public static final AssetDescriptor<Texture> HALAL_HATTER = new AssetDescriptor<Texture>("textures/reszeg_csavo.JPG", Texture.class);
     public static final AssetDescriptor<Texture> GOMB_HATTER = new AssetDescriptor<Texture>("textures/gomb.png", Texture.class);
-
+    public static final AssetDescriptor<Texture> KEK_HATTER = new AssetDescriptor<Texture>("textures/kekhatter.jpg", Texture.class);
     public static final AssetDescriptor<Texture> PIA1 = new AssetDescriptor<Texture>("textures/palesz.png", Texture.class);
     public static final AssetDescriptor<Texture> PIA2 = new AssetDescriptor<Texture>("textures/pia.png", Texture.class);
     public static final AssetDescriptor<Texture> PIA3 = new AssetDescriptor<Texture>("textures/pohar.png", Texture.class);
+    public static final AssetDescriptor<Texture> SPEAKER = new AssetDescriptor<Texture>("textures/speaker_icon.png", Texture.class);
+    public static final AssetDescriptor<Texture> NOSPEAKER = new AssetDescriptor<Texture>("textures/speaker_icon_diabled.png", Texture.class);
     public static final AssetDescriptor<Texture> KENYER = new AssetDescriptor<Texture>("textures/kenyer.png", Texture.class);
-
+    public static final AssetDescriptor<Texture> PEN = new AssetDescriptor<Texture>("textures/pen.png", Texture.class);
     public static final AssetDescriptor<Texture> GAME2_HATTER = new AssetDescriptor<Texture>("textures/game2hatter.jpg", Texture.class);
     public static final AssetDescriptor<Texture> GAME2_TAKAR1 = new AssetDescriptor<Texture>("textures/takaro1.png", Texture.class);
     public static final AssetDescriptor<Texture> GAME2_TAKAR2 = new AssetDescriptor<Texture>("textures/takaro2.png", Texture.class);
@@ -103,6 +105,7 @@ public class Assets {
         //<editor-fold desc="Loading">
         manager.load(ANTON_FONT);
         manager.load(ANTON_FONT_B);
+        manager.load(ANTON_FONT_B_P);
         manager.load(BL);
         manager.load(RONK);
         manager.load(HATTER);
@@ -112,11 +115,13 @@ public class Assets {
         manager.load(MENUHATTER);
         manager.load(HALAL_HATTER);
         manager.load(GOMB_HATTER);
-
+        manager.load(KEK_HATTER);
         manager.load(PIA1);
         manager.load(PIA2);
         manager.load(PIA3);
         manager.load(KENYER);
+        manager.load(SPEAKER);
+        manager.load(NOSPEAKER);
 
         manager.load(GAME2_HATTER);
         manager.load(GAME2_TAKAR1);

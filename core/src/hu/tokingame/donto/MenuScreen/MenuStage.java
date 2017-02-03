@@ -136,6 +136,32 @@ public class MenuStage extends MyStage {
                 });
             }
         });
+        addActor(new OneSpriteStaticActor(Assets.manager.get(Assets.SPEAKER)) {
+            @Override
+            public void init() {
+                super.init();
+                setSize(100, 100);
+                setPosition(10, Globals.WORLD_HEIGHT - this.getWidth() - 10);
+                this.setPosition(10, Globals.WORLD_HEIGHT - this.getHeight() - 10);
+                if (!Globals.music) setTexture(Assets.manager.get(Assets.NOSPEAKER));
+                addListener(new ClickListener() {
+                    @Override
+                    public void clicked(InputEvent event, float x, float y) {
+                        super.clicked(event, x, y);
+                        musicToggle = !musicToggle;
+                        Globals.music = !Globals.music;
+
+                        if (musicToggle) {
+                            setTexture(Assets.manager.get(Assets.SPEAKER));
+                            Assets.manager.get(Assets.MAIN_MUSIC).play();
+                        } else {
+                            setTexture(Assets.manager.get(Assets.NOSPEAKER));
+                            Assets.manager.get(Assets.MAIN_MUSIC).pause();
+                        }
+                    }
+                });
+            }
+        });
 
     }
 

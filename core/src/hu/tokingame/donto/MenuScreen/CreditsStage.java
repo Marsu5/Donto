@@ -42,7 +42,7 @@ public class CreditsStage extends MyStage {
 
         String s = "Bálint Dániel - Grafika\nDávid Mátyás - Kódolás\nKovács Zoltán - Kódolás\nSchuh Marcell - Kódolás";
 
-        addActor(new OneSpriteStaticActor(Assets.manager.get(Assets.MENUHATTER)){
+        addActor(new OneSpriteStaticActor(Assets.manager.get(Assets.KEK_HATTER)){
             @Override
             public void init() {
                 super.init();
@@ -56,7 +56,15 @@ public class CreditsStage extends MyStage {
             @Override
             public void init() {
                 super.init();
-                setPosition(Globals.WORLD_WIDTH / 2f - this.getWidth() / 2f, Globals.WORLD_HEIGHT/2f-this.getHeight()/2f);
+                setPosition(Globals.WORLD_WIDTH / 2f - this.getWidth() / 2f, Globals.WORLD_HEIGHT/2f-this.getHeight()/2f+200);
+            }
+        });
+
+        addActor(new MyLabel("Köszönjünk a Pannon Egyetem Nagykanizsai Kampuszának,\n hogy részt vehettünk a versenyen,\n valamint felkészítő tanárunknak Tüske Balázsnak.", MyLabel.style3) {
+            @Override
+            public void init() {
+                super.init();
+                setPosition(Globals.WORLD_WIDTH / 2f - this.getWidth() / 2f, 100);
             }
         });
 
@@ -74,7 +82,16 @@ public class CreditsStage extends MyStage {
                 });
             }
         });
+        addActor(new OneSpriteStaticActor(Assets.manager.get(Assets.PEN)) {
+            @Override
+            public void init() {
+                super.init();
+                setSize(100, 100);
+                setPosition(10, Globals.WORLD_HEIGHT - this.getWidth() - 10);
+                this.setPosition(10, Globals.WORLD_HEIGHT - this.getHeight() - 10);
 
+            }
+        });
     }
 
     @Override

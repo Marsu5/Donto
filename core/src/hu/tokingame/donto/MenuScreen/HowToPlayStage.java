@@ -41,7 +41,7 @@ public class HowToPlayStage extends MyStage {
 
         String s="Dezső a disznó megszökött a rejtett pincéből.\nSegíts a részeg bagázsnak vissza hoznia Dezsőt,\n mielőtt még a fekete autó megtalálja.\n Az első játékban koppints rá a hulló Dezsőkre,\n hogy kettévágd őket.\n A pálinka egy kis ideig nem engedi a Dezsőket megszökni,\n és a kenyérrel vissza lehet csalni őket.\n A második játékban idk Majd a Madzsy megmondja";
 
-        addActor(new OneSpriteStaticActor(Assets.manager.get(Assets.MENUHATTER)){
+        addActor(new OneSpriteStaticActor(Assets.manager.get(Assets.KEK_HATTER)){
             @Override
             public void init() {
                 super.init();
@@ -65,7 +65,7 @@ public class HowToPlayStage extends MyStage {
             }
         });
 
-        addActor(new MyLabel(s, MyLabel.style2) {
+        addActor(new MyLabel(s, MyLabel.style3) {
             @Override
             public void init() {
                 super.init();
