@@ -12,6 +12,7 @@ import hu.tokingame.donto.MenuScreen.MenuScreen;
 import hu.tokingame.donto.MyBaseClasses.MyLabel;
 import hu.tokingame.donto.MyBaseClasses.MyStage;
 import hu.tokingame.donto.MyBaseClasses.MyTextButton;
+import hu.tokingame.donto.MyBaseClasses.OneSpriteStaticActor;
 import hu.tokingame.donto.MyGdxGame;
 import jdk.nashorn.internal.objects.Global;
 
@@ -40,6 +41,15 @@ public class DeathStage extends MyStage {
     @Override
     public void init() {
         DeathStage = this;
+
+        addActor(new OneSpriteStaticActor(Assets.manager.get(Assets.HALAL_HATTER)){
+            @Override
+            public void init() {
+                super.init();
+                setPosition(0,0);
+                setSize(Globals.WORLD_WIDTH, Globals.WORLD_HEIGHT);
+            }
+        });
 
         addActor(new MyTextButton("Play again"){
             @Override

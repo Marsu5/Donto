@@ -27,14 +27,14 @@ public class ControlStage extends MyStage {
         super(new ExtendViewport(Globals.WORLD_WIDTH,Globals.WORLD_HEIGHT,new OrthographicCamera(Globals.WORLD_WIDTH,Globals.WORLD_HEIGHT)),new SpriteBatch(), game);
         gameStage = sg;
 
-        addActor(pontLabel = new MyLabel("Pont: "+ gameStage.getScore(), game.getLabelStyle()){
+        addActor(pontLabel = new MyLabel("Pont: "+ gameStage.getScore(), MyLabel.style2){
             @Override
             public void init() {
                 super.init();
                 setPosition(0, Globals.WORLD_HEIGHT-this.getHeight());
             }
         });
-        addActor(hpLabel = new MyLabel("Hápé: "+ gameStage.getHp(), game.getLabelStyle()){
+        addActor(hpLabel = new MyLabel("Hápé: "+ gameStage.getHp(), MyLabel.style2){
             @Override
             public void init() {
                 super.init();

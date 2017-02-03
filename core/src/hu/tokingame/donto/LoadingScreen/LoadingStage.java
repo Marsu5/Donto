@@ -16,6 +16,7 @@ import hu.tokingame.donto.MyGdxGame;
 public class LoadingStage extends MyStage {
 
     private LoadingStage loadingStage;
+    private OneSpriteAnimatedActor palinka;
 
     public LoadingStage(Viewport viewport, Batch batch, MyGdxGame game) {
         super(viewport, batch, game);
@@ -26,10 +27,21 @@ public class LoadingStage extends MyStage {
     public void init() {
         loadingStage = this;
 
+        addActor(palinka = new OneSpriteAnimatedActor("atlas/loading.txt"){
+            @Override
+            public void init() {
+                super.init();
+                stop();
+                setFrame(0);
+                setSize(300, 300);
+                setPosition(Globals.WORLD_WIDTH/2-this.getWidth()/2, 300);
+            }
+        });
     }
 
     @Override
     public void act(float delta) {
         super.act(delta);
+        palinka.setFramePercent(Assets.manager.getProgress());
     }
 }
