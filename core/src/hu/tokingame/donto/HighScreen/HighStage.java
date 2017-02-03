@@ -65,16 +65,16 @@ public class HighStage extends MyStage {
                 });
             }
         });
-
+        addActor(new MyLabel("Disznó eső\n", MyLabel.style2) {
+            @Override
+            public void init() {
+                super.init();
+                setPosition(Globals.WORLD_WIDTH / 2 - this.getWidth() / 2-300, 500);
+            }
+        });
         if (Globals.MaxScores1.size() > 0) {
             hsV = new Vector();
-            addActor(new MyLabel("Disznó eső\n", MyLabel.style2) {
-                @Override
-                public void init() {
-                    super.init();
-                    setPosition(Globals.WORLD_WIDTH / 2 - this.getWidth() / 2-300, 500);
-                }
-            });
+
             for (int i = 0; i < Globals.MaxScores1.size(); i++) {
                 int k = Globals.MaxScores1.get(i);
                 int b = Math.round(k * 100) / 100;
