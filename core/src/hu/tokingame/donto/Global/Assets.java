@@ -5,6 +5,7 @@ import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.assets.loaders.FileHandleResolver;
 import com.badlogic.gdx.assets.loaders.resolvers.InternalFileHandleResolver;
 import com.badlogic.gdx.audio.Music;
+import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
@@ -66,7 +67,10 @@ public class Assets {
 
     //</editor-fold>
 
-    //<editor-fold desc="Music">
+    //<editor-fold desc="sound">
+    public static final AssetDescriptor<Sound> VISITAS1 = new AssetDescriptor<Sound>("sounds/squeal1.mp3", Sound.class);
+    public static final AssetDescriptor<Sound> VISITAS2 = new AssetDescriptor<Sound>("sounds/squeal2.mp3", Sound.class);
+    public static final AssetDescriptor<Sound> VISITAS3 = new AssetDescriptor<Sound>("sounds/squeal3.mp3", Sound.class);
 
     //</editor-fold>
 
@@ -107,6 +111,10 @@ public class Assets {
         manager.load(GAME2_TAKAR2);
         manager.load(GAME2_TAKAR3);
         manager.load(GAME2_TAKAR4);
+
+        manager.load(VISITAS1);
+        manager.load(VISITAS2);
+        manager.load(VISITAS3);
         //</editor-fold>
 
     }

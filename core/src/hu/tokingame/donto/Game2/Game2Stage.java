@@ -10,6 +10,9 @@ import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
 import com.badlogic.gdx.physics.box2d.World;
 import com.badlogic.gdx.utils.viewport.ExtendViewport;
 
+import hu.tokingame.donto.Bodies.KinematicPig;
+import hu.tokingame.donto.Bodies.LevelBottomSensor;
+import hu.tokingame.donto.Bodies.PigActor;
 import hu.tokingame.donto.Game1.ControlStage;
 import hu.tokingame.donto.Game1.DeathScreen;
 import hu.tokingame.donto.Global.Assets;
@@ -31,6 +34,8 @@ public class Game2Stage extends MyStage {
     World world;
     Box2DDebugRenderer box2DDebugRenderer;
     WorldBodyEditorLoader loader;
+
+    KinematicPig pig1, pig2, pig3, pig4;
 
     float elapsedTime = 0;
 
@@ -66,15 +71,16 @@ public class Game2Stage extends MyStage {
                 setPosition(0,0);
             }
         });
+        addActor(pig1 = new KinematicPig(world, loader, 10, 6, this));
 
         addActor(new TakaroActor(world, loader, 1));
-
+        addActor(pig2 = new KinematicPig(world, loader, 0, 1, this));
 
         addActor(new TakaroActor(world, loader, 2));
-
+        addActor(pig3 = new KinematicPig(world, loader, 0, 4, this));
 
         addActor(new TakaroActor(world, loader, 3));
-
+        addActor(pig4 = new KinematicPig(world, loader, 4, 5, this));
 
         addActor(new TakaroActor(world, loader, 4));
 

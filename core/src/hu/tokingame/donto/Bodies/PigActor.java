@@ -67,6 +67,11 @@ public class PigActor extends WorldActorGroup {
         deadRotation = getBody().getAngle();
         addDead = true;
         removeFromWorld();
+        switch(Globals.random(1,3)){
+            case 1: Assets.manager.get(Assets.VISITAS1).play(); break;
+            case 2: Assets.manager.get(Assets.VISITAS2).play(); break;
+            case 3: Assets.manager.get(Assets.VISITAS3).play(); break;
+        }
     }
 
     @Override
