@@ -13,6 +13,7 @@ import com.badlogic.gdx.physics.box2d.ContactListener;
 import com.badlogic.gdx.physics.box2d.Manifold;
 import com.badlogic.gdx.physics.box2d.World;
 import com.badlogic.gdx.utils.viewport.ExtendViewport;
+import com.badlogic.gdx.utils.viewport.FitViewport;
 
 import hu.tokingame.donto.Bodies.LevelBottomSensor;
 import hu.tokingame.donto.Bodies.PigActor;

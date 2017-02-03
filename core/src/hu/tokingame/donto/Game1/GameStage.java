@@ -86,11 +86,24 @@ public class GameStage extends MyStage {
 
         addActor(character = new PigActor(world, loader,5,9,this));
 
-        addActor(new LevelBottomSensor(world, loader, 0, -16));
+        addActor(new LevelBottomSensor(world, loader, 0, -1));
 
         world.setContactListener(new ContactListener() {
             @Override
             public void beginContact(Contact contact) {
+                /*if (contact.getFixtureA().getUserData() instanceof PigActor && contact.getFixtureB().getUserData() instanceof LevelBottomSensor ||
+                        contact.getFixtureA().getUserData() instanceof LevelBottomSensor && contact.getFixtureB().getUserData() instanceof PigActor) {
+
+                    pigCount--;
+                    if(powerUP) return;
+                    hp--;
+                    System.out.println("collision");
+                }
+*/
+            }
+
+            @Override
+            public void endContact(Contact contact) {
                 if (contact.getFixtureA().getUserData() instanceof PigActor && contact.getFixtureB().getUserData() instanceof LevelBottomSensor ||
                         contact.getFixtureA().getUserData() instanceof LevelBottomSensor && contact.getFixtureB().getUserData() instanceof PigActor) {
 
@@ -99,12 +112,6 @@ public class GameStage extends MyStage {
                     hp--;
                     System.out.println("collision");
                 }
-
-            }
-
-            @Override
-            public void endContact(Contact contact) {
-
             }
 
             @Override
