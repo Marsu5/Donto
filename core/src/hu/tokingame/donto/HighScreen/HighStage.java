@@ -5,7 +5,6 @@ import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.utils.viewport.Viewport;
 
-import java.util.Collections;
 import java.util.Vector;
 
 import hu.tokingame.donto.Game1.DeathStage;
@@ -13,7 +12,6 @@ import hu.tokingame.donto.Game1.GameScreen;
 import hu.tokingame.donto.Global.Assets;
 import hu.tokingame.donto.Global.Globals;
 import hu.tokingame.donto.MenuScreen.MenuScreen;
-import hu.tokingame.donto.MyBaseClasses.BackgroundTextButton;
 import hu.tokingame.donto.MyBaseClasses.MyLabel;
 import hu.tokingame.donto.MyBaseClasses.MyStage;
 import hu.tokingame.donto.MyBaseClasses.MyTextButton;
@@ -40,9 +38,6 @@ public class HighStage extends MyStage {
     public void init() {
         HighStage = this;
 
-        Collections.sort(Globals.MaxScores);
-        Collections.reverse(Globals.MaxScores);
-
         addActor(new OneSpriteStaticActor(Assets.manager.get(Assets.MENUHATTER)){
             @Override
             public void init() {
@@ -52,7 +47,7 @@ public class HighStage extends MyStage {
             }
         });
 
-        addActor(new BackgroundTextButton("Vissza"){
+        addActor(new MyTextButton("Vissza"){
             @Override
             protected void init() {
                 super.init();
