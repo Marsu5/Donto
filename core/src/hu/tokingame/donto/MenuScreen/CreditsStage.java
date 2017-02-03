@@ -95,7 +95,7 @@ public class CreditsStage extends MyStage {
             @Override
             public void init() {
                 super.init();
-                setSize(150, 150);
+                setSize(100, 100);
                 setPosition(Globals.WORLD_WIDTH/3*2-this.getWidth()/2, 10);
             }
         });
