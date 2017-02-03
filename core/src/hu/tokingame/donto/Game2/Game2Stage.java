@@ -11,8 +11,6 @@ import com.badlogic.gdx.physics.box2d.World;
 import com.badlogic.gdx.utils.viewport.ExtendViewport;
 
 import hu.tokingame.donto.Bodies.KinematicPig;
-import hu.tokingame.donto.Bodies.LevelBottomSensor;
-import hu.tokingame.donto.Bodies.PigActor;
 import hu.tokingame.donto.Game1.ControlStage;
 import hu.tokingame.donto.Game1.DeathScreen;
 import hu.tokingame.donto.Global.Assets;
@@ -35,9 +33,17 @@ public class Game2Stage extends MyStage {
     Box2DDebugRenderer box2DDebugRenderer;
     WorldBodyEditorLoader loader;
 
-    KinematicPig pig1, pig2, pig3, pig4;
+    KinematicPig pig1, pig2, pig3;
+    TakaroActor takaro1, takaro2, takaro3;
 
-    float elapsedTime = 0;
+    boolean shouldHide = false;
+    int hideWhat = 0;
+    float notHiddenSince = 0;
+
+    boolean hidden = false;
+
+
+    float elapsedTime = 0, upTime = 3, hiddenSince = 0;
 
     private int hp = 3;
     private int score = 0;
@@ -53,7 +59,7 @@ public class Game2Stage extends MyStage {
     public Game2Stage(MyGdxGame game) {
         super(new ExtendViewport(16,9,new OrthographicCamera(16,9)), new SpriteBatch(), game);
         controlStage = new ControlStage(game, this);
-        inputMultiplexer.addProcessor(this);
+        inputMultiplexer.addProcessor(0, this);
         inputMultiplexer.addProcessor(controlStage);
         Gdx.input.setInputProcessor(inputMultiplexer);
     }
@@ -72,20 +78,20 @@ public class Game2Stage extends MyStage {
             }
         });
 
-        addActor(pig1 = new KinematicPig(world, loader, 10, 6, this));
+        addActor(pig1 = new KinematicPig(world, loader, 4, 4.5f, this));
+        pig1.setZIndex(100);
 
-        //addActor(new TakaroActor(world, loader, 1));
-        addActor(pig2 = new KinematicPig(world, loader, 0, 1, this));
+        addActor(takaro1 = new TakaroActor(world, loader, 4));
 
-        //addActor(new TakaroActor(world, loader, 2));
-        addActor(pig3 = new KinematicPig(world, loader, 0, 4, this));
+        addActor(pig2 = new KinematicPig(world, loader, 0, 3, this));
+        pig2.setZIndex(100);
 
-        //addActor(new TakaroActor(world, loader, 3));
-        addActor(pig4 = new KinematicPig(world, loader, 4, 5, this));
+        addActor(takaro2 = new TakaroActor(world, loader, 2));
 
-        addActor(new TakaroActor(world, loader, 4));
+        addActor(pig3 = new KinematicPig(world, loader, 11, 3.5f, this));
+        pig3.setZIndex(100);
 
-
+        addActor(takaro3 = new TakaroActor(world, loader, 1));
 
 
 
@@ -111,12 +117,21 @@ public class Game2Stage extends MyStage {
         world.step(delta, 10, 10);
         elapsedTime  += delta;
 
-        /*if(lastPigTime == 0) lastPigTime = elapsedTime;
-        while(pigCount < 3 && elapsedTime - lastPigTime >= randomF(0.5f,3f)){
+        if(lastPigTime == 0) lastPigTime = elapsedTime;
+        if(elapsedTime - lastPigTime >= randomF(5,10)){
             lastPigTime = elapsedTime;
-            addActor(new PigActor(world, loader,rdm(1,14),11,this));
-            pigCount++;
-        }*/
+            switch(Globals.random(1,3)){
+                case 1: pig1.show(upTime); h(1); break;
+                case 2: pig2.show(upTime); h(2); break;
+                case 3: pig3.show(upTime); h(3); break;
+            }
+        }
+        if(!hidden && shouldHide && notHiddenSince + 0.9f < elapsedTime){
+            hideTakaro(hideWhat);
+        }
+        if(hidden && hiddenSince + 5 < elapsedTime){
+            showAll();
+        }
 
         if(hp == 0){
             game.setScreen(new DeathScreen(game,score));
@@ -146,9 +161,6 @@ public class Game2Stage extends MyStage {
         super.dispose();
     }
 
-    public void minusPigCount(){
-        pigCount--;
-    }
 
     public int getScore(){
         return score;
@@ -159,16 +171,52 @@ public class Game2Stage extends MyStage {
         score++;
         System.out.println("v"+score);
     }
-    public void incrementHP(){
-        hp++;
-    }
 
     public int getHp() {
         return hp;
     }
 
-    public void pigTapped(){
-
+    public void decreaseHP(){
+        hp--;
     }
 
+    public void pigTapped(){
+        incrementScore();
+    }
+
+    public void hideTakaro(int k){
+        hidden = true;
+        hiddenSince = elapsedTime;
+        switch(k){
+            case 1: takaro1.setVisible(false);
+                takaro2.setVisible(false);
+                takaro3.setVisible(false);
+                pig2.setVisible(false);
+                pig3.setVisible(false);
+                break;
+            case 2: takaro2.setVisible(false);
+                takaro3.setVisible(false);
+                pig3.setVisible(false);
+                break;
+            case 3: takaro3.setVisible(false);
+                break;
+            default: break;
+        }
+    }
+    public void showAll(){
+        takaro1.setVisible(true);
+        takaro2.setVisible(true);
+        takaro3.setVisible(true);
+        pig1.setVisible(true);
+        pig2.setVisible(true);
+        pig3.setVisible(true);
+        shouldHide = false;
+        hideWhat = 0;
+    }
+
+    public void h(int o){
+        shouldHide = true; hideWhat = o;
+        notHiddenSince =  elapsedTime;
+
+    }
 }

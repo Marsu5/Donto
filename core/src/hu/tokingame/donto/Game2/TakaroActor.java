@@ -21,6 +21,7 @@ public class TakaroActor extends WorldActorGroup {
         super(world, loader, id(index), BodyDef.BodyType.StaticBody, 0, 0.2f, 5, false);
         actor = new OneSpriteStaticActor(tex(index));
         actor.setSize(16, 9);
+        addActor(actor);
         setSize(16,9);
         addToWorld();
 
