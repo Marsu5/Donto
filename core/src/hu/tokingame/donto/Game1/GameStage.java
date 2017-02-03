@@ -21,6 +21,7 @@ import hu.tokingame.donto.Bodies.DeadPigHead;
 import hu.tokingame.donto.Bodies.LevelBottomSensor;
 import hu.tokingame.donto.Bodies.PigActor;
 import hu.tokingame.donto.Global.Assets;
+import hu.tokingame.donto.Global.Globals;
 import hu.tokingame.donto.MenuScreen.MenuScreen;
 import hu.tokingame.donto.MyBaseClasses.MyStage;
 import hu.tokingame.donto.MyBaseClasses.OneSpriteStaticActor;
@@ -139,6 +140,7 @@ public class GameStage extends MyStage {
 
         if(hp == 0){
             game.setScreen(new DeathScreen(game,score));
+            Globals.MaxScores.add(score);
             System.out.println("dead");
         }
 
