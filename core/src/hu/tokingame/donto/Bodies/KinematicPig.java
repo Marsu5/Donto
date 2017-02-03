@@ -24,7 +24,9 @@ public class KinematicPig extends WorldActorGroup {
         game2Stage = gs;
         actor = new OneSpriteStaticActor(Assets.manager.get(Assets.MALAC));
         actor.setSize(2,1);
+        actor.setPosition(x, y);
         setSize(2,1);
+        setPosition(x, y);
         addToWorld();
 
         addListener(new ClickListener(){

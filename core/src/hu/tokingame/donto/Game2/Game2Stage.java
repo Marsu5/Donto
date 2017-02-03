@@ -71,6 +71,7 @@ public class Game2Stage extends MyStage {
                 setPosition(0,0);
             }
         });
+
         addActor(pig1 = new KinematicPig(world, loader, 10, 6, this));
 
         addActor(new TakaroActor(world, loader, 1));
