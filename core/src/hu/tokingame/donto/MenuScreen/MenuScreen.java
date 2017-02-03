@@ -19,6 +19,7 @@ public class MenuScreen extends MyScreen {
     private MenuStage stage;
 
     private static boolean firstLoad = true;
+    private static boolean firstLoad2 = true;
     private Preferences preferences;
     private Preferences preferences2;
 
@@ -49,11 +50,11 @@ public class MenuScreen extends MyScreen {
 
 
         preferences2 = Gdx.app.getPreferences(Globals.SCORE2);
-        if(firstLoad){
+        if(firstLoad2){
             for (int i = 0; i < preferences2.getInteger("size",0); i++) {
                 Globals.MaxScores2.add(preferences2.getInteger(i+"",0));
             }
-            firstLoad = false;
+            firstLoad2 = false;
         }else{
             preferences2 = Gdx.app.getPreferences(Globals.SCORE2);
             preferences2.putInteger("size",Globals.MaxScores2.size());
