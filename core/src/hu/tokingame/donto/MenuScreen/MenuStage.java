@@ -22,6 +22,7 @@ import hu.tokingame.donto.MyBaseClasses.OneSpriteStaticActor;
 import hu.tokingame.donto.MyGdxGame;
 
 import static hu.tokingame.donto.Global.Globals.MaxScores1;
+import static hu.tokingame.donto.Global.Globals.MaxScores2;
 
 /**
  * Created by M on 11/14/2016.
@@ -124,6 +125,11 @@ public class MenuStage extends MyStage {
                         Collections.reverse(Globals.MaxScores1);
                         for (int i = 5; i < MaxScores1.size(); i++) {
                             MaxScores1.remove(i);
+                        }
+                        Collections.sort(MaxScores2);
+                        Collections.reverse(MaxScores2);
+                        for (int i = 5; i < MaxScores2.size(); i++) {
+                            MaxScores2.remove(i);
                         }
                         game.setScreen(new HighScreen(game));
                     }

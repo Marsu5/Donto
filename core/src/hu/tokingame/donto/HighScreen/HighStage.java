@@ -39,6 +39,9 @@ public class HighStage extends MyStage {
         Collections.sort(Globals.MaxScores1);
         Collections.reverse(Globals.MaxScores1);
 
+        Collections.sort(Globals.MaxScores2);
+        Collections.reverse(Globals.MaxScores2);
+
         addActor(new OneSpriteStaticActor(Assets.manager.get(Assets.MENUHATTER)){
             @Override
             public void init() {
@@ -65,15 +68,22 @@ public class HighStage extends MyStage {
 
         if (Globals.MaxScores1.size() > 0) {
             hsV = new Vector();
+            addActor(new MyLabel("Disznó eső\n", MyLabel.style2) {
+                @Override
+                public void init() {
+                    super.init();
+                    setPosition(Globals.WORLD_WIDTH / 2 - this.getWidth() / 2-300, 500);
+                }
+            });
             for (int i = 0; i < Globals.MaxScores1.size(); i++) {
                 int k = Globals.MaxScores1.get(i);
                 int b = Math.round(k * 100) / 100;
                 final int finalI = i;
-                hsV.add(new MyLabel(i + 1 + ". " + b + "", MyLabel.style2) {
+                hsV.add(new MyLabel(i + 1 + ". " + b + " pont", MyLabel.style2) {
                     @Override
                     public void init() {
                         super.init();
-                        setPosition(Globals.WORLD_WIDTH / 2 - this.getWidth() / 2, finalI > 0 ? hsV.get(finalI - 1).getY() - 75 : 500);
+                        setPosition(Globals.WORLD_WIDTH / 2 - this.getWidth() / 2-300, finalI > 0 ? hsV.get(finalI - 1).getY() - 75 : 500);
                     }
                 });
                 addActor(hsV.get(i));
@@ -84,11 +94,43 @@ public class HighStage extends MyStage {
                 @Override
                 public void init() {
                     super.init();
-                    setPosition(Globals.WORLD_WIDTH / 2 - this.getWidth() / 2, 500);
+                    setPosition(Globals.WORLD_WIDTH / 2 - this.getWidth() / 2-300, 500);
                 }
             });
         }
+        addActor(new MyLabel("Disznó vadászat\n", MyLabel.style2) {
+            @Override
+            public void init() {
+                super.init();
+                setPosition(Globals.WORLD_WIDTH / 2 - this.getWidth() / 2+300, 500);
+            }
+        });
+        if (Globals.MaxScores2.size() > 0) {
+            hsV = new Vector();
 
+            for (int i = 0; i < Globals.MaxScores2.size(); i++) {
+                int k = Globals.MaxScores2.get(i);
+                int b = Math.round(k * 100) / 100;
+                final int finalI = i;
+                hsV.add(new MyLabel(i + 1 + ". " + b + " pont", MyLabel.style2) {
+                    @Override
+                    public void init() {
+                        super.init();
+                        setPosition(Globals.WORLD_WIDTH / 2 - this.getWidth() / 2+300, finalI > 0 ? hsV.get(finalI - 1).getY() - 75 : 500);
+                    }
+                });
+                addActor(hsV.get(i));
+            }
+            hsV.clear();
+        } else {
+            addActor(new MyLabel("Még nincs elért eredmény", MyLabel.style2) {
+                @Override
+                public void init() {
+                    super.init();
+                    setPosition(Globals.WORLD_WIDTH / 2 - this.getWidth() / 2+300, 500);
+                }
+            });
+        }
     }
 
     @Override
