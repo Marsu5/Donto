@@ -134,7 +134,7 @@ public class GameStage extends MyStage {
         if(lastPigTime == 0) lastPigTime = elapsedTime;
         while(pigCount < 3 && elapsedTime - lastPigTime >= randomF(0.5f,3f)){
             lastPigTime = elapsedTime;
-            addActor(new PigActor(world, loader,randomF(0,15),11,this));
+            addActor(new PigActor(world, loader,rdm(1,14),11,this));
             pigCount++;
         }
 
@@ -143,7 +143,7 @@ public class GameStage extends MyStage {
             Globals.MaxScores.add(score);
             System.out.println("dead");
         }
-
+        box2DDebugRenderer.render(world,getCamera().combined);
 
     }
 

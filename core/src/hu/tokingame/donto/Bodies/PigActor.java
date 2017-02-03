@@ -26,9 +26,13 @@ public class PigActor extends WorldActorGroup {
     private float deadY;
     private boolean addDead = false;
     private Vector2 deadVol;
+    private float deadRotation;
 
     private World world;
     private WorldBodyEditorLoader loader;
+
+
+
 
     public PigActor(World world, WorldBodyEditorLoader loader, float x, float y, GameStage stage) {
         super(world, loader, "sample", BodyDef.BodyType.DynamicBody, 0, 0.2f, 5, false);
@@ -60,6 +64,7 @@ public class PigActor extends WorldActorGroup {
         deadVol = getBody().getLinearVelocity();
         gameStage.incrementScore();
         gameStage.minusPigCount();
+        deadRotation = getBody().getAngle();
         addDead = true;
         removeFromWorld();
     }
@@ -80,5 +85,6 @@ public class PigActor extends WorldActorGroup {
         }
         if(getBody() == null) return;
         getBody().applyTorque(rotateRef * delta, true);
-    }
+}
+
 }
