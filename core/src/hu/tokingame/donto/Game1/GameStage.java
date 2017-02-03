@@ -93,10 +93,11 @@ public class GameStage extends MyStage {
             public void beginContact(Contact contact) {
                 if (contact.getFixtureA().getUserData() instanceof PigActor && contact.getFixtureB().getUserData() instanceof LevelBottomSensor ||
                         contact.getFixtureA().getUserData() instanceof LevelBottomSensor && contact.getFixtureB().getUserData() instanceof PigActor) {
-                    if(powerUP) return;
-                    System.out.println("collision");
-                    hp--;
+
                     pigCount--;
+                    if(powerUP) return;
+                    hp--;
+                    System.out.println("collision");
                 }
 
             }
@@ -166,26 +167,8 @@ public class GameStage extends MyStage {
             Globals.MaxScores.add(score);
             System.out.println("dead");
         }
-/*
-        for (Actor a: this.getActors()) {
-            if(a instanceof PigActor){
-                if(a.getY() < 0){
-                    System.out.println("kinvan");
-                    ((PigActor)a).removeFromWorld();
-                }
-            }else if(a instanceof DeadPigButt){
-                if(a.getY() < 0){
-                    System.out.println("kinvan");
-                    ((DeadPigButt)a).removeFromWorld();
-                }
-            }else if(a instanceof DeadPigHead){
-                if(a.getY() < 0){
-                    System.out.println("kinvan");
-                    ((DeadPigHead)a).removeFromWorld();
-                }
-            }
-        }
-*/
+
+
         box2DDebugRenderer.render(world,getCamera().combined);
 
     }
