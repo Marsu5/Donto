@@ -8,6 +8,8 @@ import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.utils.viewport.Viewport;
 
 
+import java.util.Collections;
+
 import hu.tokingame.donto.Game1.GameScreen;
 import hu.tokingame.donto.Game2.Game2Screen;
 import hu.tokingame.donto.Global.Assets;
@@ -18,6 +20,8 @@ import hu.tokingame.donto.MyBaseClasses.MyStage;
 import hu.tokingame.donto.MyBaseClasses.MyTextButton;
 import hu.tokingame.donto.MyBaseClasses.OneSpriteStaticActor;
 import hu.tokingame.donto.MyGdxGame;
+
+import static hu.tokingame.donto.Global.Globals.MaxScores1;
 
 /**
  * Created by M on 11/14/2016.
@@ -51,7 +55,7 @@ public class MenuStage extends MyStage {
             }
         });
 
-        addActor(new BackgroundTextButton(" Játék "){
+        addActor(new BackgroundTextButton(" Disznó eső "){
             @Override
             protected void init() {
                 super.init();
@@ -116,6 +120,11 @@ public class MenuStage extends MyStage {
                     @Override
                     public void clicked(InputEvent event, float x, float y) {
                         super.clicked(event, x, y);
+                        Collections.sort(Globals.MaxScores1);
+                        Collections.reverse(Globals.MaxScores1);
+                        for (int i = 5; i < MaxScores1.size(); i++) {
+                            MaxScores1.remove(i);
+                        }
                         game.setScreen(new HighScreen(game));
                     }
                 });

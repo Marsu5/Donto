@@ -69,7 +69,7 @@ public class HighStage extends MyStage {
                 int k = Globals.MaxScores1.get(i);
                 int b = Math.round(k * 100) / 100;
                 final int finalI = i;
-                hsV.add(new MyLabel(i + 1 + ". " + b + "", MyLabel.style1) {
+                hsV.add(new MyLabel(i + 1 + ". " + b + "", MyLabel.style2) {
                     @Override
                     public void init() {
                         super.init();
@@ -80,7 +80,7 @@ public class HighStage extends MyStage {
             }
             hsV.clear();
         } else {
-            addActor(new MyLabel("Még nincs elért eredmény", MyLabel.style1) {
+            addActor(new MyLabel("Még nincs elért eredmény", MyLabel.style2) {
                 @Override
                 public void init() {
                     super.init();
