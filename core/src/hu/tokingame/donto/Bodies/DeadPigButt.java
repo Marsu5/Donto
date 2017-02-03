@@ -29,6 +29,7 @@ public class DeadPigButt extends WorldActorGroup {
     @Override
     public void act(float delta) {
         super.act(delta);
+        if(getBody() == null) return;
         getBody().applyForceToCenter(new Vector2(150*delta, 0), true);
     }
 }
