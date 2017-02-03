@@ -179,6 +179,9 @@ public class GameStage extends MyStage {
         score++;
         System.out.println("v"+score);
     }
+    public void incrementHP(){
+        hp++;
+    }
 
     public int getHp() {
         return hp;

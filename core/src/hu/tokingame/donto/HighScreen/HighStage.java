@@ -77,10 +77,10 @@ public class HighStage extends MyStage {
                     }
                 });
                 addActor(hsV.get(i));
-            } // Egy megérett a meggy. Kettő megérett a meggy. Három megérett a meggy...
+            }
             hsV.clear();
         } else {
-            addActor(new MyLabel("There are no scores yet.", MyLabel.style1) {
+            addActor(new MyLabel("Még nincs elért eredmény", MyLabel.style1) {
                 @Override
                 public void init() {
                     super.init();
