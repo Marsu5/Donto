@@ -74,13 +74,13 @@ public class Game2Stage extends MyStage {
 
         addActor(pig1 = new KinematicPig(world, loader, 10, 6, this));
 
-        addActor(new TakaroActor(world, loader, 1));
+        //addActor(new TakaroActor(world, loader, 1));
         addActor(pig2 = new KinematicPig(world, loader, 0, 1, this));
 
-        addActor(new TakaroActor(world, loader, 2));
+        //addActor(new TakaroActor(world, loader, 2));
         addActor(pig3 = new KinematicPig(world, loader, 0, 4, this));
 
-        addActor(new TakaroActor(world, loader, 3));
+        //addActor(new TakaroActor(world, loader, 3));
         addActor(pig4 = new KinematicPig(world, loader, 4, 5, this));
 
         addActor(new TakaroActor(world, loader, 4));

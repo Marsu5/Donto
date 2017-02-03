@@ -11,7 +11,7 @@ import hu.tokingame.donto.Global.Assets;
  */
 public class MyLabel extends Label implements InitableInterface{
 
-    public static LabelStyle style1, style2;
+    public static LabelStyle style1, style2, style3;
 
     static {
         refresh();
@@ -24,7 +24,9 @@ public class MyLabel extends Label implements InitableInterface{
         style2 = new LabelStyle();
         style2.font = Assets.manager.get(Assets.ANTON_FONT_B);
         style2.fontColor = Color.BLACK;
-
+        style3 = new LabelStyle();
+        style3.font = Assets.manager.get(Assets.ANTON_FONT_B_P);
+        style3.fontColor = Color.BLACK;
     }
 
     public MyLabel(CharSequence text, LabelStyle style) {
@@ -40,6 +42,9 @@ public class MyLabel extends Label implements InitableInterface{
         style2 = new LabelStyle();
         style2.font = Assets.manager.get(Assets.ANTON_FONT_B);
         style2.fontColor = Color.BLACK;
+        style3 = new LabelStyle();
+        style3.font = Assets.manager.get(Assets.ANTON_FONT_B_P);
+        style3.fontColor = Color.BLACK;
     }
 
     protected float elapsedtime =0;

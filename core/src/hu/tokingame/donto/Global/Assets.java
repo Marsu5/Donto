@@ -29,6 +29,7 @@ public class Assets {
         fontParameter.fontParameters.characters = hu.tokingame.donto.Global.Globals.CHARS;
         fontParameter.fontParameters.color = Color.WHITE;
     }
+
     static final FreetypeFontLoader.FreeTypeFontLoaderParameter fontParameter2 = new FreetypeFontLoader.FreeTypeFontLoaderParameter();
     static {
         fontParameter2.fontFileName = "fonts/Anton-Regular.ttf";
@@ -36,9 +37,19 @@ public class Assets {
         fontParameter2.fontParameters.characters = hu.tokingame.donto.Global.Globals.CHARS;
         fontParameter2.fontParameters.color = Color.BLACK;
     }
+
+    static final FreetypeFontLoader.FreeTypeFontLoaderParameter fontParameter3 = new FreetypeFontLoader.FreeTypeFontLoaderParameter();
+    static {
+        fontParameter3.fontFileName = "fonts/Anton-Regular.ttf";
+        fontParameter3.fontParameters.size = 25;
+        fontParameter3.fontParameters.characters = hu.tokingame.donto.Global.Globals.CHARS;
+        fontParameter3.fontParameters.color = Color.BLACK;
+    }
+
     // Fonts
     public static final AssetDescriptor<BitmapFont> ANTON_FONT = new AssetDescriptor<BitmapFont>("Fonts/Anton-Regular.ttf", BitmapFont.class, fontParameter);
     public static final AssetDescriptor<BitmapFont> ANTON_FONT_B = new AssetDescriptor<BitmapFont>("Fonts/Anton-Regular.ttf", BitmapFont.class, fontParameter2);
+    public static final AssetDescriptor<BitmapFont> ANTON_FONT_B_P = new AssetDescriptor<BitmapFont>("Fonts/Anton-Regular.ttf", BitmapFont.class, fontParameter3);
 
 
 
