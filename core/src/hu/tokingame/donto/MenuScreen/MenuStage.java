@@ -79,6 +79,21 @@ public class MenuStage extends MyStage {
             }
         });
 
+        addActor(new BackgroundTextButton("  Kilépés  "){
+            @Override
+            protected void init() {
+                super.init();
+                setPosition(Globals.WORLD_WIDTH-250, Globals.WORLD_HEIGHT-100);
+                addListener(new ClickListener(){
+                    @Override
+                    public void clicked(InputEvent event, float x, float y) {
+                        super.clicked(event, x, y);
+                        System.exit(0);
+                    }
+                });
+            }
+        });
+
     }
 
     @Override
