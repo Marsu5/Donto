@@ -84,6 +84,7 @@ public class GameStage extends MyStage {
                         contact.getFixtureA().getUserData() instanceof LevelBottomSensor && contact.getFixtureB().getUserData() instanceof PigActor) {
                     System.out.println("collision");
                     hp--;
+                    pigCount--;
 
                 }
 
@@ -136,7 +137,7 @@ public class GameStage extends MyStage {
         }
 
         if(hp == 0){
-            //// TODO: 2/3/2017 halál képernyő
+            game.setScreen(new DeathScreen(game,score));
             System.out.println("dead");
         }
 

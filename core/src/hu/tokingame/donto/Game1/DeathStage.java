@@ -4,6 +4,7 @@ import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.utils.viewport.Viewport;
 
 import hu.tokingame.donto.LoadingScreen.LoadingStage;
+import hu.tokingame.donto.MyBaseClasses.MyLabel;
 import hu.tokingame.donto.MyBaseClasses.MyStage;
 import hu.tokingame.donto.MyGdxGame;
 
@@ -15,14 +16,24 @@ public class DeathStage extends MyStage {
 
     private DeathStage DeathStage;
 
-    public DeathStage(Viewport viewport, Batch batch, MyGdxGame game) {
+    public DeathStage(Viewport viewport, Batch batch, MyGdxGame game, int score) {
         super(viewport, batch, game);
+
+        addActor(new MyLabel("You Died. \n Your score was:"+score, MyLabel.style1){
+            @Override
+            public void init() {
+                super.init();
+                this.setPosition(200, 600);
+            }
+        });
     }
 
 
     @Override
     public void init() {
         DeathStage = this;
+
+
 
     }
 
