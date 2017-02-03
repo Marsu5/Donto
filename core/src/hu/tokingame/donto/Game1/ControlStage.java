@@ -8,6 +8,7 @@ import com.badlogic.gdx.utils.viewport.ExtendViewport;
 
 import hu.tokingame.donto.Global.Globals;
 import hu.tokingame.donto.MenuScreen.MenuScreen;
+import hu.tokingame.donto.MyBaseClasses.BackgroundTextButton;
 import hu.tokingame.donto.MyBaseClasses.MyLabel;
 import hu.tokingame.donto.MyBaseClasses.MyStage;
 import hu.tokingame.donto.MyBaseClasses.MyTextButton;
@@ -40,7 +41,7 @@ public class ControlStage extends MyStage {
 
     @Override
     public void init() {
-        addActor(new MyTextButton("Kilépés"){
+        addActor(new BackgroundTextButton("Kilépés"){
             @Override
             protected void init() {
                 super.init();

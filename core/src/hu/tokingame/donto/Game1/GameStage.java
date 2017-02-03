@@ -7,9 +7,15 @@ import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
+import com.badlogic.gdx.physics.box2d.Contact;
+import com.badlogic.gdx.physics.box2d.ContactImpulse;
+import com.badlogic.gdx.physics.box2d.ContactListener;
+import com.badlogic.gdx.physics.box2d.Manifold;
 import com.badlogic.gdx.physics.box2d.World;
 import com.badlogic.gdx.utils.viewport.ExtendViewport;
 
+import hu.tokingame.donto.Bodies.LevelBottomSensor;
+import hu.tokingame.donto.Bodies.PigActor;
 import hu.tokingame.donto.MenuScreen.MenuScreen;
 import hu.tokingame.donto.MyBaseClasses.MyStage;
 import hu.tokingame.donto.MyBaseClasses.WorldBodyEditorLoader;
@@ -30,6 +36,7 @@ public class GameStage extends MyStage {
 
     float elapsedTime = 0;
 
+
     int rdm(int a, int b){return (int)(Math.random()*(b-a+1)+a);}
 
 
@@ -45,6 +52,39 @@ public class GameStage extends MyStage {
         world = new World(new Vector2(0, -20), false);
         box2DDebugRenderer = new Box2DDebugRenderer();
         loader = new WorldBodyEditorLoader(Gdx.files.internal("phys.json"));
+
+
+        world.setContactListener(new ContactListener() {
+            @Override
+            public void beginContact(Contact contact) {
+                if (contact.getFixtureA().getUserData() instanceof PigActor && contact.getFixtureB().getUserData() instanceof LevelBottomSensor ||
+                        contact.getFixtureA().getUserData() instanceof LevelBottomSensor && contact.getFixtureB().getUserData() instanceof PigActor) {
+                    System.out.println("collision");
+                    
+                }
+
+            }
+
+            @Override
+            public void endContact(Contact contact) {
+
+            }
+
+            @Override
+            public void preSolve(Contact contact, Manifold oldManifold) {
+
+            }
+
+            @Override
+            public void postSolve(Contact contact, ContactImpulse impulse) {
+
+            }
+        });
+
+
+
+
+
     }
 
     @Override
@@ -83,4 +123,6 @@ public class GameStage extends MyStage {
         controlStage.dispose();
         super.dispose();
     }
+
+
 }

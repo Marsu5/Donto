@@ -9,6 +9,7 @@ import com.badlogic.gdx.utils.viewport.Viewport;
 
 
 import hu.tokingame.donto.Game1.GameScreen;
+import hu.tokingame.donto.MyBaseClasses.BackgroundTextButton;
 import hu.tokingame.donto.MyBaseClasses.MyStage;
 import hu.tokingame.donto.MyBaseClasses.MyTextButton;
 import hu.tokingame.donto.MyGdxGame;
@@ -36,7 +37,7 @@ public class MenuStage extends MyStage {
     @Override
     public void init() {
 
-        addActor(new MyTextButton("Play"){
+        addActor(new BackgroundTextButton("Play"){
             @Override
             protected void init() {
                 super.init();
