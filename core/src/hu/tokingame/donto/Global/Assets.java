@@ -70,7 +70,7 @@ public class Assets {
     public static final AssetDescriptor<Texture> PIA2 = new AssetDescriptor<Texture>("textures/pia.png", Texture.class);
     public static final AssetDescriptor<Texture> PIA3 = new AssetDescriptor<Texture>("textures/pohar.png", Texture.class);
     public static final AssetDescriptor<Texture> SPEAKER = new AssetDescriptor<Texture>("textures/speaker_icon.png", Texture.class);
-    public static final AssetDescriptor<Texture> NOSPEAKER = new AssetDescriptor<Texture>("textures/speaker_icon_diabled.png", Texture.class);
+    public static final AssetDescriptor<Texture> NOSPEAKER = new AssetDescriptor<Texture>("textures/speaker_icon_disabled.png", Texture.class);
     public static final AssetDescriptor<Texture> KENYER = new AssetDescriptor<Texture>("textures/kenyer.png", Texture.class);
     public static final AssetDescriptor<Texture> PEN = new AssetDescriptor<Texture>("textures/pen.png", Texture.class);
     public static final AssetDescriptor<Texture> GAME2_HATTER = new AssetDescriptor<Texture>("textures/game2hatter.jpg", Texture.class);
