@@ -74,6 +74,17 @@ public class Game2Stage extends MyStage {
             }
         });
 
+        addActor(new TakaroActor(world, loader, 1));
+
+
+        addActor(new TakaroActor(world, loader, 2));
+
+
+        addActor(new TakaroActor(world, loader, 3));
+
+
+        addActor(new TakaroActor(world, loader, 4));
+
 
 
 
