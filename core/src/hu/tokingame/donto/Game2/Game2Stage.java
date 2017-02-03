@@ -10,6 +10,7 @@ import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
 import com.badlogic.gdx.physics.box2d.World;
 import com.badlogic.gdx.utils.viewport.ExtendViewport;
 
+import hu.tokingame.donto.Bodies.DeadPigHead;
 import hu.tokingame.donto.Bodies.KinematicPig;
 import hu.tokingame.donto.Game1.ControlStage;
 import hu.tokingame.donto.Game1.DeathScreen;
@@ -219,5 +220,9 @@ public class Game2Stage extends MyStage {
         shouldHide = true; hideWhat = o;
         notHiddenSince =  elapsedTime;
 
+    }
+
+    public void spawnHead(float x, float y){
+        addActor(new DeadPigHead(world, loader, x, y));
     }
 }

@@ -7,6 +7,7 @@ import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 
 import hu.tokingame.donto.Game2.Game2Stage;
 import hu.tokingame.donto.Global.Assets;
+import hu.tokingame.donto.Global.Globals;
 import hu.tokingame.donto.MyBaseClasses.OneSpriteStaticActor;
 import hu.tokingame.donto.MyBaseClasses.WorldActorGroup;
 import hu.tokingame.donto.MyBaseClasses.WorldBodyEditorLoader;
@@ -76,5 +77,11 @@ public class KinematicPig extends WorldActorGroup {
         showTime = 0;
         setY(Y);
         game2Stage.showAll();
+        switch(Globals.random(1,3)){
+            case 1: Assets.manager.get(Assets.VISITAS1).play(); break;
+            case 2: Assets.manager.get(Assets.VISITAS2).play(); break;
+            case 3: Assets.manager.get(Assets.VISITAS3).play(); break;
+        }
+        game2Stage.spawnHead(getX(), getY()+2);
     }
 }
