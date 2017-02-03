@@ -51,6 +51,7 @@ public class Assets {
     public static final AssetDescriptor<Texture> MALAC_SEGG = new AssetDescriptor<Texture>("textures/malac-segg.png", Texture.class);
     public static final AssetDescriptor<Texture> MENUHATTER = new AssetDescriptor<Texture>("textures/menuhatter.png", Texture.class);
     public static final AssetDescriptor<Texture> HALAL_HATTER = new AssetDescriptor<Texture>("textures/reszeg_csavo.JPG", Texture.class);
+    public static final AssetDescriptor<Texture> GOMB_HATTER = new AssetDescriptor<Texture>("textures/gomb.png", Texture.class);
 
     //</editor-fold>
 
@@ -83,6 +84,7 @@ public class Assets {
         manager.load(MALAC_SEGG);
         manager.load(MENUHATTER);
         manager.load(HALAL_HATTER);
+        manager.load(GOMB_HATTER);
         //</editor-fold>
 
     }

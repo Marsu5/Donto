@@ -12,6 +12,7 @@ import hu.tokingame.donto.Game1.GameScreen;
 import hu.tokingame.donto.Global.Assets;
 import hu.tokingame.donto.Global.Globals;
 import hu.tokingame.donto.MenuScreen.MenuScreen;
+import hu.tokingame.donto.MyBaseClasses.BackgroundTextButton;
 import hu.tokingame.donto.MyBaseClasses.MyLabel;
 import hu.tokingame.donto.MyBaseClasses.MyStage;
 import hu.tokingame.donto.MyBaseClasses.MyTextButton;
@@ -47,11 +48,11 @@ public class HighStage extends MyStage {
             }
         });
 
-        addActor(new MyTextButton("Vissza"){
+        addActor(new BackgroundTextButton("Vissza"){
             @Override
             protected void init() {
                 super.init();
-                setPosition(Globals.WORLD_WIDTH-150, 10);
+                setPosition(Globals.WORLD_WIDTH-this.getWidth()-30, 10);
                 addListener(new ClickListener(){
                     @Override
                     public void clicked(InputEvent event, float x, float y) {
