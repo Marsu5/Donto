@@ -19,9 +19,11 @@ public class Globals {
     public static boolean multiPlayer = false;
     public static boolean dead = false;
 
+    public static String SCORE1 = "score1";
+
     public static Mode gameMode = Mode.SinglePlayer;
 
-    public static Vector<Integer> MaxScores = new Vector();
+    public static Vector<Integer> MaxScores1 = new Vector();
 
     public static float randomF(float a, float b){return (float) (Math.random()*(b-a+1)+a);}
 

@@ -12,13 +12,8 @@ import com.badlogic.gdx.physics.box2d.ContactImpulse;
 import com.badlogic.gdx.physics.box2d.ContactListener;
 import com.badlogic.gdx.physics.box2d.Manifold;
 import com.badlogic.gdx.physics.box2d.World;
-import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.utils.viewport.ExtendViewport;
 
-import java.util.Vector;
-
-import hu.tokingame.donto.Bodies.DeadPigButt;
-import hu.tokingame.donto.Bodies.DeadPigHead;
 import hu.tokingame.donto.Bodies.HealthActor;
 import hu.tokingame.donto.Bodies.LevelBottomSensor;
 import hu.tokingame.donto.Bodies.PigActor;
@@ -26,7 +21,6 @@ import hu.tokingame.donto.Bodies.PowerUpActor;
 import hu.tokingame.donto.Global.Assets;
 import hu.tokingame.donto.Global.Globals;
 import hu.tokingame.donto.MenuScreen.MenuScreen;
-import hu.tokingame.donto.MyBaseClasses.MyActor;
 import hu.tokingame.donto.MyBaseClasses.MyStage;
 import hu.tokingame.donto.MyBaseClasses.OneSpriteStaticActor;
 import hu.tokingame.donto.MyBaseClasses.WorldBodyEditorLoader;
@@ -91,7 +85,8 @@ public class GameStage extends MyStage {
         world.setContactListener(new ContactListener() {
             @Override
             public void beginContact(Contact contact) {
-                /*if (contact.getFixtureA().getUserData() instanceof PigActor && contact.getFixtureB().getUserData() instanceof LevelBottomSensor ||
+                /*
+                if (contact.getFixtureA().getUserData() instanceof PigActor && contact.getFixtureB().getUserData() instanceof LevelBottomSensor ||
                         contact.getFixtureA().getUserData() instanceof LevelBottomSensor && contact.getFixtureB().getUserData() instanceof PigActor) {
 
                     pigCount--;
@@ -99,7 +94,7 @@ public class GameStage extends MyStage {
                     hp--;
                     System.out.println("collision");
                 }
-*/
+                */
             }
 
             @Override
@@ -112,6 +107,7 @@ public class GameStage extends MyStage {
                     hp--;
                     System.out.println("collision");
                 }
+                
             }
 
             @Override
@@ -171,7 +167,7 @@ public class GameStage extends MyStage {
 
         if(hp == 0){
             game.setScreen(new DeathScreen(game,score));
-            Globals.MaxScores.add(score);
+            Globals.MaxScores1.add(score);
             System.out.println("dead");
         }
 

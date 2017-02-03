@@ -7,16 +7,9 @@ import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
-import com.badlogic.gdx.physics.box2d.Contact;
-import com.badlogic.gdx.physics.box2d.ContactImpulse;
-import com.badlogic.gdx.physics.box2d.ContactListener;
-import com.badlogic.gdx.physics.box2d.Manifold;
 import com.badlogic.gdx.physics.box2d.World;
 import com.badlogic.gdx.utils.viewport.ExtendViewport;
-import com.badlogic.gdx.utils.viewport.FitViewport;
 
-import hu.tokingame.donto.Bodies.LevelBottomSensor;
-import hu.tokingame.donto.Bodies.PigActor;
 import hu.tokingame.donto.Game1.ControlStage;
 import hu.tokingame.donto.Game1.DeathScreen;
 import hu.tokingame.donto.Global.Assets;
@@ -120,7 +113,7 @@ public class Game2Stage extends MyStage {
 
         if(hp == 0){
             game.setScreen(new DeathScreen(game,score));
-            Globals.MaxScores.add(score);
+            Globals.MaxScores1.add(score);
             System.out.println("dead");
         }
         box2DDebugRenderer.render(world,getCamera().combined);

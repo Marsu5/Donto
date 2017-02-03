@@ -1,5 +1,7 @@
 package hu.tokingame.donto.Game1;
 
+import com.badlogic.gdx.Preferences;
+
 import hu.tokingame.donto.MyBaseClasses.MyScreen;
 import hu.tokingame.donto.MyGdxGame;
 
@@ -10,6 +12,8 @@ import hu.tokingame.donto.MyGdxGame;
 public class GameScreen extends MyScreen {
 
     private GameStage stage;
+
+
 
     public GameScreen(MyGdxGame game) {
         super(game);

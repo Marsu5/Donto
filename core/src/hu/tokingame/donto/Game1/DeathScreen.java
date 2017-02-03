@@ -1,6 +1,7 @@
 package hu.tokingame.donto.Game1;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Preferences;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.viewport.ExtendViewport;
@@ -15,11 +16,22 @@ import hu.tokingame.donto.MyGdxGame;
  */
 
 public class DeathScreen extends MyScreen{
+
     private DeathStage stage;
+    private Preferences preferences;
 
     public DeathScreen(MyGdxGame game, int score) {
         super(game);
         stage = new DeathStage(new ExtendViewport(Globals.WORLD_WIDTH,Globals.WORLD_HEIGHT,new OrthographicCamera(Globals.WORLD_WIDTH,Globals.WORLD_HEIGHT)),new SpriteBatch(),game,score);
+
+        preferences = Gdx.app.getPreferences(Globals.SCORE1);
+        preferences.putInteger("size",Globals.MaxScores1.size());
+        for (int i = 0; i < Globals.MaxScores1.size(); i++) {
+            preferences.putInteger(i+"",Globals.MaxScores1.get(i));
+        }
+
+        preferences.flush();
+
         Gdx.input.setInputProcessor(stage);
     }
 
