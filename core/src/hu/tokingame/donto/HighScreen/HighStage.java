@@ -9,11 +9,13 @@ import java.util.Vector;
 
 import hu.tokingame.donto.Game1.DeathStage;
 import hu.tokingame.donto.Game1.GameScreen;
+import hu.tokingame.donto.Global.Assets;
 import hu.tokingame.donto.Global.Globals;
 import hu.tokingame.donto.MenuScreen.MenuScreen;
 import hu.tokingame.donto.MyBaseClasses.MyLabel;
 import hu.tokingame.donto.MyBaseClasses.MyStage;
 import hu.tokingame.donto.MyBaseClasses.MyTextButton;
+import hu.tokingame.donto.MyBaseClasses.OneSpriteStaticActor;
 import hu.tokingame.donto.MyGdxGame;
 
 /**
@@ -36,6 +38,14 @@ public class HighStage extends MyStage {
     public void init() {
         HighStage = this;
 
+        addActor(new OneSpriteStaticActor(Assets.manager.get(Assets.MENUHATTER)){
+            @Override
+            public void init() {
+                super.init();
+                setPosition(0,0);
+                setSize(Globals.WORLD_WIDTH, Globals.WORLD_HEIGHT);
+            }
+        });
 
         addActor(new MyTextButton("Vissza"){
             @Override
@@ -58,7 +68,7 @@ public class HighStage extends MyStage {
                 int k = Globals.MaxScores.get(i);
                 int b = Math.round(k * 100) / 100;
                 final int finalI = i;
-                hsV.add(new MyLabel(i + 1 + ". " + b + "", MyLabel.style2) {
+                hsV.add(new MyLabel(i + 1 + ". " + b + "", MyLabel.style1) {
                     @Override
                     public void init() {
                         super.init();
@@ -69,7 +79,7 @@ public class HighStage extends MyStage {
             } // Egy megérett a meggy. Kettő megérett a meggy. Három megérett a meggy...
             hsV.clear();
         } else {
-            addActor(new MyLabel("There are no scores yet.", MyLabel.style2) {
+            addActor(new MyLabel("There are no scores yet.", MyLabel.style1) {
                 @Override
                 public void init() {
                     super.init();

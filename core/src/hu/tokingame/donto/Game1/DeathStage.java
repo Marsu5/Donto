@@ -42,6 +42,15 @@ public class DeathStage extends MyStage {
     public void init() {
         DeathStage = this;
 
+        addActor(new OneSpriteStaticActor(Assets.manager.get(Assets.MENUHATTER)){
+            @Override
+            public void init() {
+                super.init();
+                setPosition(0,0);
+                setSize(Globals.WORLD_WIDTH, Globals.WORLD_HEIGHT);
+            }
+        });
+
         addActor(new OneSpriteStaticActor(Assets.manager.get(Assets.HALAL_HATTER)){
             @Override
             public void init() {
