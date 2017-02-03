@@ -139,7 +139,7 @@ public class Game2Stage extends MyStage {
             Globals.MaxScores2.add(score);
             System.out.println("dead");
         }
-        box2DDebugRenderer.render(world,getCamera().combined);
+        //box2DDebugRenderer.render(world,getCamera().combined);
 
     }
 

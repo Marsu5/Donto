@@ -172,7 +172,7 @@ public class GameStage extends MyStage {
         }
 
 
-        box2DDebugRenderer.render(world,getCamera().combined);
+        //box2DDebugRenderer.render(world,getCamera().combined);
 
     }
 
