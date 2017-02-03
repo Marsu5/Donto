@@ -9,6 +9,7 @@ import com.badlogic.gdx.utils.viewport.Viewport;
 
 
 import hu.tokingame.donto.Game1.GameScreen;
+import hu.tokingame.donto.Game2.Game2Screen;
 import hu.tokingame.donto.Global.Assets;
 import hu.tokingame.donto.Global.Globals;
 import hu.tokingame.donto.HighScreen.HighScreen;
@@ -60,6 +61,20 @@ public class MenuStage extends MyStage {
                     public void clicked(InputEvent event, float x, float y) {
                         super.clicked(event, x, y);
                         game.setScreen(new GameScreen(game));
+                    }
+                });
+            }
+        });
+        addActor(new BackgroundTextButton(" Disznóvadászat "){
+            @Override
+            protected void init() {
+                super.init();
+                this.setPosition(Globals.WORLD_WIDTH/2-this.getWidth()/2,300);
+                addListener(new ClickListener(){
+                    @Override
+                    public void clicked(InputEvent event, float x, float y) {
+                        super.clicked(event, x, y);
+                        game.setScreen(new Game2Screen(game));
                     }
                 });
             }

@@ -155,6 +155,8 @@ public class Game2Stage extends MyStage {
         return hp;
     }
 
-
+    public void pigTapped(){
+        
+    }
 
 }
