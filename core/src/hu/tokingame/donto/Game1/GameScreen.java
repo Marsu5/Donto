@@ -1,4 +1,4 @@
-package hu.tokingame.donto.Game;
+package hu.tokingame.donto.Game1;
 
 import hu.tokingame.donto.MyBaseClasses.MyScreen;
 import hu.tokingame.donto.MyGdxGame;

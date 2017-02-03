@@ -1,18 +1,12 @@
-package hu.tokingame.donto.Game;
+package hu.tokingame.donto.Game1;
 
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.scenes.scene2d.InputEvent;
-import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.utils.viewport.ExtendViewport;
 
-import hu.tokingame.donto.Global.Assets;
 import hu.tokingame.donto.Global.Globals;
-import hu.tokingame.donto.MenuScreen.MenuScreen;
 import hu.tokingame.donto.MyBaseClasses.MyLabel;
 import hu.tokingame.donto.MyBaseClasses.MyStage;
-import hu.tokingame.donto.MyBaseClasses.MyTextButton;
-import hu.tokingame.donto.MyBaseClasses.OneSpriteStaticActor;
 import hu.tokingame.donto.MyGdxGame;
 
 /**

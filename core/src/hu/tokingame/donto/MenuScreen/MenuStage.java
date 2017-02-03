@@ -8,7 +8,7 @@ import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.utils.viewport.Viewport;
 
 
-import hu.tokingame.donto.Game.GameScreen;
+import hu.tokingame.donto.Game1.GameScreen;
 import hu.tokingame.donto.MyBaseClasses.MyStage;
 import hu.tokingame.donto.MyBaseClasses.MyTextButton;
 import hu.tokingame.donto.MyGdxGame;

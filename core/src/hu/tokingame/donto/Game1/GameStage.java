@@ -1,22 +1,14 @@
-package hu.tokingame.donto.Game;
+package hu.tokingame.donto.Game1;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.InputMultiplexer;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.math.Vector2;
-import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
-import com.badlogic.gdx.physics.box2d.World;
 import com.badlogic.gdx.utils.viewport.ExtendViewport;
 
-import java.util.Vector;
-
 import hu.tokingame.donto.MenuScreen.MenuScreen;
-import hu.tokingame.donto.MyBaseClasses.MyLabel;
 import hu.tokingame.donto.MyBaseClasses.MyStage;
-import hu.tokingame.donto.MyBaseClasses.MyTextButton;
-import hu.tokingame.donto.MyBaseClasses.WorldBodyEditorLoader;
 import hu.tokingame.donto.MyGdxGame;
 
 /**
