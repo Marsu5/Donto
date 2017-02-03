@@ -60,7 +60,7 @@ public class GameStage extends MyStage {
     }
     @Override
     public void init() {
-        world = new World(new Vector2(0, -5), false);
+        world = new World(new Vector2(0, -4), false);
         box2DDebugRenderer = new Box2DDebugRenderer();
         loader = new WorldBodyEditorLoader(Gdx.files.internal("phys.json"));
 
