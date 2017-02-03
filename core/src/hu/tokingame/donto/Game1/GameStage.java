@@ -230,6 +230,14 @@ public class GameStage extends MyStage {
         return hp;
     }
 
+    public float getPowerUPLeft(){
+        return powerUPLeft;
+    }
+
+    public boolean isPowerUP(){
+        return powerUP;
+    }
+
     public void enablePowerUP(){
         powerUP = true;
         System.out.println("powerup");

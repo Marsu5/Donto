@@ -33,9 +33,14 @@ public class HealthActor extends WorldActorGroup {
             @Override
             public boolean touchDown(InputEvent event, float x, float y, int pointer, int button) {
                 gameStage.incrementHP();
+                tapped();
                 return super.touchDown(event, x, y, pointer, button);
             }
         });
+    }
+
+    public void tapped(){
+        removeFromWorld();
     }
 
 }

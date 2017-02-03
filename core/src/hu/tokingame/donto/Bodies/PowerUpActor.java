@@ -35,11 +35,17 @@ public class PowerUpActor extends WorldActorGroup {
             @Override
             public boolean touchDown(InputEvent event, float x, float y, int pointer, int button) {
                 gameStage.enablePowerUP();
+                tapped();
                 return super.touchDown(event, x, y, pointer, button);
             }
         });
     }
-    Texture randomtex(){
+
+    public void tapped(){
+        removeFromWorld();
+    }
+
+    private Texture randomtex(){
         switch(Globals.random(1,3)){
             case 1: return Assets.manager.get(Assets.PIA1);
             case 2: return Assets.manager.get(Assets.PIA2);
