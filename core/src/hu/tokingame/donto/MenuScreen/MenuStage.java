@@ -24,7 +24,7 @@ import hu.tokingame.donto.MyGdxGame;
  */
 
 public class MenuStage extends MyStage {
-
+    boolean musicToggle=false;
 
     public MenuStage(Viewport viewport, Batch batch, MyGdxGame game) {
         super(viewport, batch, game);
@@ -148,16 +148,16 @@ public class MenuStage extends MyStage {
                     @Override
                     public void clicked(InputEvent event, float x, float y) {
                         super.clicked(event, x, y);
-                        //musicToggle = !musicToggle;
-                        //Globals.music = !Globals.music;
+                        musicToggle = !musicToggle;
+                        Globals.music = !Globals.music;
 
-                        //if (musicToggle) {
-                        //    setTexture(Assets.manager.get(Assets.SPEAKER));
-                        //    Assets.manager.get(Assets.MAIN_MUSIC).play();
-                        //} else {
-                        //    setTexture(Assets.manager.get(Assets.NOSPEAKER));
-                        //    Assets.manager.get(Assets.MAIN_MUSIC).pause();
-                        //}
+                        if (musicToggle) {
+                            setTexture(Assets.manager.get(Assets.SPEAKER));
+                            Assets.manager.get(Assets.MUSIC).play();
+                        } else {
+                            setTexture(Assets.manager.get(Assets.NOSPEAKER));
+                            Assets.manager.get(Assets.MUSIC).pause();
+                        }
                     }
                 });
             }

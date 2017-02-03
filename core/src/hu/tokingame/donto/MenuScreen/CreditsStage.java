@@ -82,16 +82,6 @@ public class CreditsStage extends MyStage {
                 });
             }
         });
-        addActor(new OneSpriteStaticActor(Assets.manager.get(Assets.PEN)) {
-            @Override
-            public void init() {
-                super.init();
-                setSize(100, 100);
-                setPosition(10, Globals.WORLD_HEIGHT - this.getWidth() - 10);
-                this.setPosition(10, Globals.WORLD_HEIGHT - this.getHeight() - 10);
-
-            }
-        });
     }
 
     @Override
