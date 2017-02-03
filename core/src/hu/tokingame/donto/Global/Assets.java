@@ -78,6 +78,7 @@ public class Assets {
     public static final AssetDescriptor<Texture> GAME2_TAKAR2 = new AssetDescriptor<Texture>("textures/takaro2.png", Texture.class);
     public static final AssetDescriptor<Texture> GAME2_TAKAR3 = new AssetDescriptor<Texture>("textures/takaro3.png", Texture.class);
     public static final AssetDescriptor<Texture> GAME2_TAKAR4 = new AssetDescriptor<Texture>("textures/takaro4.png", Texture.class);
+    public static final AssetDescriptor<Texture> TOKIN = new AssetDescriptor<Texture>("textures/tokin.png", Texture.class);
 
     //</editor-fold>
 
@@ -123,6 +124,7 @@ public class Assets {
         manager.load(KENYER);
         manager.load(SPEAKER);
         manager.load(NOSPEAKER);
+        manager.load(TOKIN);
 
         manager.load(GAME2_HATTER);
         manager.load(GAME2_TAKAR1);
