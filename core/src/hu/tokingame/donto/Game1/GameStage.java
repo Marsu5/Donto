@@ -50,6 +50,8 @@ public class GameStage extends MyStage {
     private int pigCount = 0;
     private float lastPigTime = 0;
 
+    private boolean powerUP = false;
+
     int rdm(int a, int b){return (int)(Math.random()*(b-a+1)+a);}
     float randomF(float a, float b){return (float) (Math.random()*(b-a+1)+a);}
 
@@ -186,4 +188,10 @@ public class GameStage extends MyStage {
     public int getHp() {
         return hp;
     }
+
+    public void enablePowerUP(){
+        powerUP = true;
+    }
+
+
 }
