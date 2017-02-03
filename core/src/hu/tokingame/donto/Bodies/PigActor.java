@@ -46,6 +46,7 @@ public class PigActor extends WorldActorGroup {
     public void die(){
         gameStage.incrementScore();
         gameStage.minusPigCount();
+        gameStage.incrmentDeadPigsToAdd();
         removeFromWorld();
     }
 

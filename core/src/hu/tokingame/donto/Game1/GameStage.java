@@ -16,6 +16,8 @@ import com.badlogic.gdx.utils.viewport.ExtendViewport;
 
 import java.util.Vector;
 
+import hu.tokingame.donto.Bodies.DeadPigButt;
+import hu.tokingame.donto.Bodies.DeadPigHead;
 import hu.tokingame.donto.Bodies.LevelBottomSensor;
 import hu.tokingame.donto.Bodies.PigActor;
 import hu.tokingame.donto.Global.Assets;
@@ -46,6 +48,8 @@ public class GameStage extends MyStage {
     // pig timer 0.5f 3f
     private int pigCount = 0;
     private float lastPigTime = 0;
+
+    private float deadPigsToAdd = 0;
 
     int rdm(int a, int b){return (int)(Math.random()*(b-a+1)+a);}
     float randomF(float a, float b){return (float) (Math.random()*(b-a+1)+a);}
@@ -135,6 +139,12 @@ public class GameStage extends MyStage {
             pigCount++;
         }
 
+        while(deadPigsToAdd > 0){
+            addActor(new DeadPigButt(world,loader,5,5));
+            addActor(new DeadPigHead(world,loader,5,5));
+            deadPigsToAdd--;
+        }
+
         if(hp == 0){
             game.setScreen(new DeathScreen(game,score));
             System.out.println("dead");
@@ -174,6 +184,10 @@ public class GameStage extends MyStage {
         System.out.println("k"+score);
         score++;
         System.out.println("v"+score);
+    }
+
+    public void incrmentDeadPigsToAdd(){
+        deadPigsToAdd++;
     }
 
     public int getHp() {
