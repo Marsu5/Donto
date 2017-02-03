@@ -58,7 +58,7 @@ public class KinematicPig extends WorldActorGroup {
                 elapsedTime = 0;
                 game2Stage.decreaseHP();
             }
-            if(getY() < Y + 2) setY(getY() + 0.05f);
+            if(getY() < Y + 1.5f) setY(getY() + 0.05f);
         }
         else{
             if(getY() > Y) setY(getY() - 0.05f);

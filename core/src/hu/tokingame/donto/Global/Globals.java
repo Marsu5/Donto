@@ -23,7 +23,7 @@ public class Globals {
 
     public static Mode gameMode = Mode.SinglePlayer;
 
-    public static Vector<Integer> MaxScores1 = new Vector();
+    public static Vector<Integer> MaxScores1 = new Vector(), MaxScores2 = new Vector();
 
     public static float randomF(float a, float b){return (float) (Math.random()*(b-a+1)+a);}
 

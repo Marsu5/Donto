@@ -129,13 +129,13 @@ public class Game2Stage extends MyStage {
         if(!hidden && shouldHide && notHiddenSince + 0.9f < elapsedTime){
             hideTakaro(hideWhat);
         }
-        if(hidden && hiddenSince + 5 < elapsedTime){
+        if(hidden && hiddenSince + upTime-1 < elapsedTime){
             showAll();
         }
 
         if(hp == 0){
             game.setScreen(new DeathScreen(game,score));
-            Globals.MaxScores1.add(score);
+            Globals.MaxScores2.add(score);
             System.out.println("dead");
         }
         box2DDebugRenderer.render(world,getCamera().combined);
@@ -212,6 +212,7 @@ public class Game2Stage extends MyStage {
         pig3.setVisible(true);
         shouldHide = false;
         hideWhat = 0;
+        hidden = false;
     }
 
     public void h(int o){
