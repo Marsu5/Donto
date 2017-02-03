@@ -13,8 +13,8 @@ import hu.tokingame.donto.MyBaseClasses.WorldBodyEditorLoader;
 
 public class LevelBottomSensor extends WorldActorGroup {
     public LevelBottomSensor(World world, WorldBodyEditorLoader loader, float x, float y) {
-        super(world, loader,"csik", BodyDef.BodyType.StaticBody, 0, 0, 0, true);
-        setSize(16,1);
+        super(world, loader,"sample", BodyDef.BodyType.StaticBody, 0, 0, 0, true);
+        setSize(16,16);
         setPosition(x, y);
         addToWorld();
     }
