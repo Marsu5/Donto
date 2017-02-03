@@ -10,6 +10,7 @@ import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
 import com.badlogic.gdx.physics.box2d.World;
 import com.badlogic.gdx.utils.viewport.ExtendViewport;
 
+import hu.tokingame.donto.Bodies.PigActor;
 import hu.tokingame.donto.MenuScreen.MenuScreen;
 import hu.tokingame.donto.MyBaseClasses.MyStage;
 import hu.tokingame.donto.MyBaseClasses.WorldBodyEditorLoader;
@@ -23,7 +24,7 @@ public class GameStage extends MyStage {
     protected InputMultiplexer inputMultiplexer = new InputMultiplexer();
 
     private ControlStage controlStage;
-
+    private PigActor character;
     World world;
     Box2DDebugRenderer box2DDebugRenderer;
     WorldBodyEditorLoader loader;
@@ -42,9 +43,11 @@ public class GameStage extends MyStage {
     }
     @Override
     public void init() {
-        world = new World(new Vector2(0, -20), false);
+        world = new World(new Vector2(0, -15), false);
         box2DDebugRenderer = new Box2DDebugRenderer();
         loader = new WorldBodyEditorLoader(Gdx.files.internal("phys.json"));
+        addActor(character = new PigActor(world, loader,5,9));
+
     }
 
     @Override
