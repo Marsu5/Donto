@@ -43,7 +43,7 @@ public class PigActor extends WorldActorGroup {
         this.loader = loader;
         this.world = world;
 
-        rotateRef = Globals.randomF(-300, 300) * 10;
+        rotateRef = Globals.randomF(-150, 150) * 10;
 
         addListener(new ClickListener(){
             @Override
@@ -70,8 +70,8 @@ public class PigActor extends WorldActorGroup {
         if(addDead){
             DeadPigButt butt;
             DeadPigHead head;
-            gameStage.addActor(head = new DeadPigHead(world,loader,deadX,deadY));
             gameStage.addActor(butt = new DeadPigButt(world,loader,deadX,deadY));
+            gameStage.addActor(head = new DeadPigHead(world,loader,deadX,deadY));
             head.getBody().applyTorque(rotateRef * delta, true);
             butt.getBody().applyTorque(-rotateRef * delta, true);
             head.getBody().setLinearVelocity(deadVol);
