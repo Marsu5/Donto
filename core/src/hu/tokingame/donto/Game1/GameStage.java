@@ -18,8 +18,10 @@ import java.util.Vector;
 
 import hu.tokingame.donto.Bodies.LevelBottomSensor;
 import hu.tokingame.donto.Bodies.PigActor;
+import hu.tokingame.donto.Global.Assets;
 import hu.tokingame.donto.MenuScreen.MenuScreen;
 import hu.tokingame.donto.MyBaseClasses.MyStage;
+import hu.tokingame.donto.MyBaseClasses.OneSpriteStaticActor;
 import hu.tokingame.donto.MyBaseClasses.WorldBodyEditorLoader;
 import hu.tokingame.donto.MyGdxGame;
 
@@ -61,6 +63,17 @@ public class GameStage extends MyStage {
         world = new World(new Vector2(0, -5), false);
         box2DDebugRenderer = new Box2DDebugRenderer();
         loader = new WorldBodyEditorLoader(Gdx.files.internal("phys.json"));
+
+        addActor(new OneSpriteStaticActor(Assets.manager.get(Assets.HATTER)){
+            @Override
+            public void init() {
+                super.init();
+                setSize(16, 9);
+                setPosition(0,0);
+            }
+        });
+
+        addActor(character = new PigActor(world, loader,5,9,this));
 
         addActor(new LevelBottomSensor(world,0,0));
 
