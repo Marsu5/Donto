@@ -126,7 +126,7 @@ public class Game2Stage extends MyStage {
                 case 3: pig3.show(upTime); h(3); break;
             }
         }
-        if(!hidden && shouldHide && notHiddenSince + 0.9f < elapsedTime){
+        if(!hidden && shouldHide && notHiddenSince + 0.8f < elapsedTime){
             hideTakaro(hideWhat);
         }
         if(hidden && hiddenSince + upTime-1 < elapsedTime){
