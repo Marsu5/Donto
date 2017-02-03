@@ -24,7 +24,7 @@ import hu.tokingame.donto.MyGdxGame;
  */
 
 public class MenuStage extends MyStage {
-    boolean musicToggle=false;
+    boolean musicToggle=true;
 
     public MenuStage(Viewport viewport, Batch batch, MyGdxGame game) {
         super(viewport, batch, game);

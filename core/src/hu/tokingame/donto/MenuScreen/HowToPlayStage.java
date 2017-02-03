@@ -69,7 +69,9 @@ public class HowToPlayStage extends MyStage {
             @Override
             public void init() {
                 super.init();
-                setPosition(Globals.WORLD_WIDTH / 2f - this.getWidth() / 2f, Globals.WORLD_HEIGHT/2f-this.getHeight()/2f);
+                setFontScale(0.75f);
+                setSize(500,500);
+                setPosition(Globals.WORLD_WIDTH / 2f - this.getWidth()-200 / 2f, Globals.WORLD_HEIGHT/2f-this.getHeight()/2f);
             }
         });
 

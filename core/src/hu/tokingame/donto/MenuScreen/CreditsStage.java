@@ -64,7 +64,8 @@ public class CreditsStage extends MyStage {
             @Override
             public void init() {
                 super.init();
-                setPosition(Globals.WORLD_WIDTH / 2f - this.getWidth() / 2f, 100);
+                setFontScale(0.75f);
+                setPosition(Globals.WORLD_WIDTH / 2f - this.getWidth() / 2f+150, 100);
             }
         });
 
@@ -87,9 +88,7 @@ public class CreditsStage extends MyStage {
             public void init() {
                 super.init();
                 setSize(100, 100);
-                setPosition(10, Globals.WORLD_HEIGHT - this.getWidth() - 10);
-                this.setPosition(10, Globals.WORLD_HEIGHT - this.getHeight() - 10);
-
+                setPosition(Globals.WORLD_WIDTH/2f-this.getWidth()/2f, 10);
             }
         });
 
