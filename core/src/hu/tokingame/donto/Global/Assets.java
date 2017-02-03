@@ -43,7 +43,7 @@ public class Assets {
 
 
     //<editor-fold desc="Map Elements">
-
+    public static final AssetDescriptor<Texture> BL = new AssetDescriptor<Texture>("badlogic.jpg", Texture.class);
     //</editor-fold>
 
     //<editor-fold desc="Music">
@@ -67,6 +67,7 @@ public class Assets {
         //<editor-fold desc="Loading">
         manager.load(ANTON_FONT);
         manager.load(ANTON_FONT_B);
+        manager.load(BL);
         //</editor-fold>
 
     }
