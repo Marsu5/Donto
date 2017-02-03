@@ -9,9 +9,12 @@ import com.badlogic.gdx.utils.viewport.Viewport;
 
 
 import hu.tokingame.donto.Game1.GameScreen;
+import hu.tokingame.donto.Global.Assets;
+import hu.tokingame.donto.Global.Globals;
 import hu.tokingame.donto.MyBaseClasses.BackgroundTextButton;
 import hu.tokingame.donto.MyBaseClasses.MyStage;
 import hu.tokingame.donto.MyBaseClasses.MyTextButton;
+import hu.tokingame.donto.MyBaseClasses.OneSpriteStaticActor;
 import hu.tokingame.donto.MyGdxGame;
 
 /**
@@ -37,11 +40,20 @@ public class MenuStage extends MyStage {
     @Override
     public void init() {
 
+        addActor(new OneSpriteStaticActor(Assets.manager.get(Assets.MENUHATTER)){
+            @Override
+            public void init() {
+                super.init();
+                setPosition(0,0);
+                setSize(Globals.WORLD_WIDTH, Globals.WORLD_HEIGHT);
+            }
+        });
+
         addActor(new BackgroundTextButton("Játék"){
             @Override
             protected void init() {
                 super.init();
-                this.setPosition(0,0);
+                this.setPosition(Globals.WORLD_WIDTH/2-this.getWidth()/2,500);
                 addListener(new ClickListener(){
                     @Override
                     public void clicked(InputEvent event, float x, float y) {

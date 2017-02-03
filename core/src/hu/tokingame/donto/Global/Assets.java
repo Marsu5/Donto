@@ -49,6 +49,8 @@ public class Assets {
     public static final AssetDescriptor<Texture> MALAC = new AssetDescriptor<Texture>("textures/malac.PNG", Texture.class);
     public static final AssetDescriptor<Texture> MALAC_FEJ = new AssetDescriptor<Texture>("textures/malac-fej.png", Texture.class);
     public static final AssetDescriptor<Texture> MALAC_SEGG = new AssetDescriptor<Texture>("textures/malac-segg.png", Texture.class);
+    public static final AssetDescriptor<Texture> MENUHATTER = new AssetDescriptor<Texture>("textures/menuhatter.png", Texture.class);
+
     //</editor-fold>
 
     //<editor-fold desc="Music">
@@ -78,6 +80,7 @@ public class Assets {
         manager.load(MALAC);
         manager.load(MALAC_FEJ);
         manager.load(MALAC_SEGG);
+        manager.load(MENUHATTER);
         //</editor-fold>
 
     }
