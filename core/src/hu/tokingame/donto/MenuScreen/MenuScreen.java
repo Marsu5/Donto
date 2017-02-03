@@ -20,6 +20,7 @@ public class MenuScreen extends MyScreen {
 
     private static boolean firstLoad = true;
     private Preferences preferences;
+    private Preferences preferences2;
 
     public MenuScreen(MyGdxGame game) {
         super(game);
@@ -45,6 +46,23 @@ public class MenuScreen extends MyScreen {
         }
 
         preferences.flush();
+
+
+        preferences2 = Gdx.app.getPreferences(Globals.SCORE2);
+        if(firstLoad){
+            for (int i = 0; i < preferences2.getInteger("size",0); i++) {
+                Globals.MaxScores2.add(preferences2.getInteger(i+"",0));
+            }
+            firstLoad = false;
+        }else{
+            preferences2 = Gdx.app.getPreferences(Globals.SCORE2);
+            preferences2.putInteger("size",Globals.MaxScores2.size());
+            for (int i = 0; i < Globals.MaxScores2.size(); i++) {
+                preferences2.putInteger(i+"",Globals.MaxScores2.get(i));
+            }
+        }
+
+        preferences2.flush();
 
         Gdx.input.setInputProcessor(stage);
     }

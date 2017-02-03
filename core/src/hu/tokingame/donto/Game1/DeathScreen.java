@@ -19,6 +19,7 @@ public class DeathScreen extends MyScreen{
 
     private DeathStage stage;
     private Preferences preferences;
+    private Preferences preferences2;
 
     public DeathScreen(MyGdxGame game, int score) {
         super(game);
@@ -31,6 +32,14 @@ public class DeathScreen extends MyScreen{
         }
 
         preferences.flush();
+
+        preferences2 = Gdx.app.getPreferences(Globals.SCORE2);
+        preferences2.putInteger("size",Globals.MaxScores2.size());
+        for (int i = 0; i < Globals.MaxScores2.size(); i++) {
+            preferences2.putInteger(i+"",Globals.MaxScores2.get(i));
+        }
+
+        preferences2.flush();
 
         Gdx.input.setInputProcessor(stage);
     }

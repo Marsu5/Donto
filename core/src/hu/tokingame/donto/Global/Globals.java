@@ -20,6 +20,7 @@ public class Globals {
     public static boolean dead = false;
 
     public static String SCORE1 = "score1";
+    public static String SCORE2 = "score2";
 
     public static Mode gameMode = Mode.SinglePlayer;
 
