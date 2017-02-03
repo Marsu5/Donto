@@ -9,6 +9,7 @@ import hu.tokingame.donto.Global.Assets;
 import hu.tokingame.donto.Global.Globals;
 import hu.tokingame.donto.LoadingScreen.LoadingStage;
 import hu.tokingame.donto.MenuScreen.MenuScreen;
+import hu.tokingame.donto.MyBaseClasses.BackgroundTextButton;
 import hu.tokingame.donto.MyBaseClasses.MyLabel;
 import hu.tokingame.donto.MyBaseClasses.MyStage;
 import hu.tokingame.donto.MyBaseClasses.MyTextButton;
@@ -60,7 +61,7 @@ public class DeathStage extends MyStage {
             }
         });
 
-        addActor(new MyTextButton("Play again"){
+        addActor(new BackgroundTextButton("Play again"){
             @Override
             protected void init() {
                 super.init();
@@ -75,7 +76,7 @@ public class DeathStage extends MyStage {
             }
         });
 
-        addActor(new MyTextButton("Exit"){
+        addActor(new BackgroundTextButton("Exit"){
             @Override
             protected void init() {
                 super.init();
