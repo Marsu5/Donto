@@ -25,7 +25,7 @@ public class Globals {
 
     public static float randomF(float a, float b){return (float) (Math.random()*(b-a+1)+a);}
 
-    public static float random(int a, int b){return (int) (Math.random()*(b-a+1)+a);}
+    public static int random(int a, int b){return (int) (Math.random()*(b-a+1)+a);}
 
 
 

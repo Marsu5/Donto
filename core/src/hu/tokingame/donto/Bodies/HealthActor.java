@@ -24,7 +24,7 @@ public class HealthActor extends WorldActorGroup {
     public HealthActor(World world, WorldBodyEditorLoader loader, float x, float y, GameStage gs) {
         super(world, loader, "sample", BodyDef.BodyType.DynamicBody, 0, 0.2f, 5, false);
         gameStage = gs;
-        addActor(actor = new OneSpriteStaticActor(Assets.manager.get(Assets.BL)));
+        addActor(actor = new OneSpriteStaticActor(Assets.manager.get(Assets.KENYER)));
         actor.setSize(1,1);
         setSize(1,1);
         addToWorld();
@@ -39,3 +39,4 @@ public class HealthActor extends WorldActorGroup {
     }
 
 }
+

@@ -53,6 +53,11 @@ public class Assets {
     public static final AssetDescriptor<Texture> HALAL_HATTER = new AssetDescriptor<Texture>("textures/reszeg_csavo.JPG", Texture.class);
     public static final AssetDescriptor<Texture> GOMB_HATTER = new AssetDescriptor<Texture>("textures/gomb.png", Texture.class);
 
+    public static final AssetDescriptor<Texture> PIA1 = new AssetDescriptor<Texture>("textures/palesz.png", Texture.class);
+    public static final AssetDescriptor<Texture> PIA2 = new AssetDescriptor<Texture>("textures/pia.png", Texture.class);
+    public static final AssetDescriptor<Texture> PIA3 = new AssetDescriptor<Texture>("textures/pohar.png", Texture.class);
+    public static final AssetDescriptor<Texture> KENYER = new AssetDescriptor<Texture>("textures/kenyer.png", Texture.class);
+
     //</editor-fold>
 
     //<editor-fold desc="Music">
@@ -85,6 +90,11 @@ public class Assets {
         manager.load(MENUHATTER);
         manager.load(HALAL_HATTER);
         manager.load(GOMB_HATTER);
+
+        manager.load(PIA1);
+        manager.load(PIA2);
+        manager.load(PIA3);
+        manager.load(KENYER);
         //</editor-fold>
 
     }

@@ -1,5 +1,6 @@
 package hu.tokingame.donto.Bodies;
 
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.physics.box2d.BodyDef;
 import com.badlogic.gdx.physics.box2d.World;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
@@ -24,7 +25,7 @@ public class PowerUpActor extends WorldActorGroup {
         super(world, loader, "sample", BodyDef.BodyType.DynamicBody, 0, 0.2f, 5, false);
         addToWorld();
         gameStage = stage;
-        actor = new OneSpriteStaticActor(Assets.manager.get(Assets.BL));
+        actor = new OneSpriteStaticActor(randomtex());
         setSize(1f,1f);
         actor.setSize(1f,1f);
         addActor(actor);
@@ -37,5 +38,13 @@ public class PowerUpActor extends WorldActorGroup {
                 return super.touchDown(event, x, y, pointer, button);
             }
         });
+    }
+    Texture randomtex(){
+        switch(Globals.random(1,3)){
+            case 1: return Assets.manager.get(Assets.PIA1);
+            case 2: return Assets.manager.get(Assets.PIA2);
+            case 3: return Assets.manager.get(Assets.PIA3);
+            default: return Assets.manager.get(Assets.BL);
+        }
     }
 }
