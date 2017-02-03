@@ -11,6 +11,7 @@ import com.badlogic.gdx.utils.viewport.Viewport;
 import hu.tokingame.donto.Game1.GameScreen;
 import hu.tokingame.donto.Global.Assets;
 import hu.tokingame.donto.Global.Globals;
+import hu.tokingame.donto.HighScreen.HighScreen;
 import hu.tokingame.donto.MyBaseClasses.BackgroundTextButton;
 import hu.tokingame.donto.MyBaseClasses.MyStage;
 import hu.tokingame.donto.MyBaseClasses.MyTextButton;
@@ -59,6 +60,20 @@ public class MenuStage extends MyStage {
                     public void clicked(InputEvent event, float x, float y) {
                         super.clicked(event, x, y);
                         game.setScreen(new GameScreen(game));
+                    }
+                });
+            }
+        });
+        addActor(new BackgroundTextButton("Legjobb eredmények"){
+            @Override
+            protected void init() {
+                super.init();
+                setPosition(Globals.WORLD_WIDTH-500, 10);
+                addListener(new ClickListener(){
+                    @Override
+                    public void clicked(InputEvent event, float x, float y) {
+                        super.clicked(event, x, y);
+                        game.setScreen(new HighScreen(game));
                     }
                 });
             }
