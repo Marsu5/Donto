@@ -7,10 +7,12 @@ import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.utils.viewport.Viewport;
 
+import hu.tokingame.donto.Global.Assets;
 import hu.tokingame.donto.MyBaseClasses.BackgroundTextButton;
 import hu.tokingame.donto.MyBaseClasses.MyStage;
 import hu.tokingame.donto.Global.Globals;
 import hu.tokingame.donto.MyBaseClasses.MyLabel;
+import hu.tokingame.donto.MyBaseClasses.OneSpriteStaticActor;
 import hu.tokingame.donto.MyGdxGame;
 
 /**
@@ -38,6 +40,15 @@ public class ExitStage extends MyStage {
     @Override
     public void init() {
 
+        addActor(new OneSpriteStaticActor(Assets.manager.get(Assets.MENUHATTER)){
+            @Override
+            public void init() {
+                super.init();
+                setPosition(0,0);
+                setSize(Globals.WORLD_WIDTH, Globals.WORLD_HEIGHT);
+            }
+        });
+
         addActor(new MyLabel("Biztosan kilépsz?",MyLabel.style1){
             @Override
             public void init() {
@@ -50,7 +61,7 @@ public class ExitStage extends MyStage {
             @Override
             protected void init() {
                 super.init();
-                setPosition(Globals.WORLD_WIDTH/2-this.getWidth()/2f+200, Globals.WORLD_HEIGHT/2-this.getWidth()/2f);
+                setPosition(Globals.WORLD_WIDTH/2-this.getWidth()/2f-200, Globals.WORLD_HEIGHT/2-this.getWidth()/2f);
                 addListener(new ClickListener(){
                     @Override
                     public void clicked(InputEvent event, float x, float y) {
@@ -65,7 +76,7 @@ public class ExitStage extends MyStage {
             @Override
             protected void init() {
                 super.init();
-                setPosition(Globals.WORLD_WIDTH/2-this.getWidth()/2f-200, Globals.WORLD_HEIGHT/2-this.getWidth()/2f);
+                setPosition(Globals.WORLD_WIDTH/2-this.getWidth()/2f+200, Globals.WORLD_HEIGHT/2-this.getWidth()/2f);
                 addListener(new ClickListener(){
                     @Override
                     public void clicked(InputEvent event, float x, float y) {
