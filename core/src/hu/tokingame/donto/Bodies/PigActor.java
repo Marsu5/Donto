@@ -24,9 +24,9 @@ public class PigActor extends WorldActorGroup {
         super(world, loader, "sample", BodyDef.BodyType.DynamicBody, 0, 0.2f, 5, false);
         addToWorld();
         gameStage = stage;
-        actor = new OneSpriteStaticActor(Assets.manager.get(Assets.BL));
-        setSize(1f,1f);
-        actor.setSize(1f,1f);
+        actor = new OneSpriteStaticActor(Assets.manager.get(Assets.MALAC));
+        setSize(2f,1f);
+        actor.setSize(2f,1f);
         addActor(actor);
         setPosition(x,y);
         addListener(new ClickListener(){
