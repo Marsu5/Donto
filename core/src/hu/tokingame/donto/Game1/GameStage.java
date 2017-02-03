@@ -14,6 +14,8 @@ import com.badlogic.gdx.physics.box2d.Manifold;
 import com.badlogic.gdx.physics.box2d.World;
 import com.badlogic.gdx.utils.viewport.ExtendViewport;
 
+import java.util.Vector;
+
 import hu.tokingame.donto.Bodies.LevelBottomSensor;
 import hu.tokingame.donto.Bodies.PigActor;
 import hu.tokingame.donto.MenuScreen.MenuScreen;
@@ -39,7 +41,12 @@ public class GameStage extends MyStage {
     private int hp = 3;
     private int score = 0;
 
+    // pig timer 0.5f 3f
+    private int pigCount = 0;
+    private float lastPigTime = 0;
+
     int rdm(int a, int b){return (int)(Math.random()*(b-a+1)+a);}
+    float randomF(float a, float b){return (float) (Math.random()*(b-a+1)+a);}
 
 
     public GameStage(MyGdxGame game) {
@@ -54,9 +61,8 @@ public class GameStage extends MyStage {
         world = new World(new Vector2(0, -5), false);
         box2DDebugRenderer = new Box2DDebugRenderer();
         loader = new WorldBodyEditorLoader(Gdx.files.internal("phys.json"));
-        addActor(character = new PigActor(world, loader,5,9,this));
 
-
+        addActor(new LevelBottomSensor(world,0,0));
 
         world.setContactListener(new ContactListener() {
             @Override
@@ -64,6 +70,7 @@ public class GameStage extends MyStage {
                 if (contact.getFixtureA().getUserData() instanceof PigActor && contact.getFixtureB().getUserData() instanceof LevelBottomSensor ||
                         contact.getFixtureA().getUserData() instanceof LevelBottomSensor && contact.getFixtureB().getUserData() instanceof PigActor) {
                     System.out.println("collision");
+                    hp--;
 
                 }
 
@@ -107,9 +114,20 @@ public class GameStage extends MyStage {
         controlStage.act();
         world.step(delta, 10, 10);
         elapsedTime  += delta;
+
+        if(lastPigTime == 0) lastPigTime = elapsedTime;
+        while(pigCount < 3 && elapsedTime - lastPigTime >= randomF(0.5f,3f)){
+            lastPigTime = elapsedTime;
+            addActor(new PigActor(world, loader,randomF(0,15),11,this));
+            pigCount++;
+        }
+
         if(hp == 0){
             //// TODO: 2/3/2017 halál képernyő
+            System.out.println("dead");
         }
+
+
     }
 
     @Override
@@ -129,6 +147,10 @@ public class GameStage extends MyStage {
     public void dispose() {
         controlStage.dispose();
         super.dispose();
+    }
+
+    public void minusPigCount(){
+        pigCount--;
     }
 
     public int getScore(){

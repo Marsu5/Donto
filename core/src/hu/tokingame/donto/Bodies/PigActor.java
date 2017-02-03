@@ -17,8 +17,9 @@ import hu.tokingame.donto.MyBaseClasses.WorldBodyEditorLoader;
  */
 
 public class PigActor extends WorldActorGroup {
-    OneSpriteStaticActor actor;
-    GameStage gameStage;
+    private OneSpriteStaticActor actor;
+    private GameStage gameStage;
+
     public PigActor(World world, WorldBodyEditorLoader loader, float x, float y, GameStage stage) {
         super(world, loader, "sample", BodyDef.BodyType.DynamicBody, 0, 0.2f, 5, false);
         addToWorld();
@@ -38,8 +39,9 @@ public class PigActor extends WorldActorGroup {
     }
 
     public void die(){
-        removeFromWorld();
         gameStage.incrementScore();
+        gameStage.minusPigCount();
+        removeFromWorld();
     }
 
 

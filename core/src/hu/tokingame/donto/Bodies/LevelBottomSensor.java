@@ -15,6 +15,7 @@ public class LevelBottomSensor extends WorldActorGroup {
         super(world, ShapeType.Rectangle, BodyDef.BodyType.StaticBody, 0, 0, 0, true);
         setSize(16,1);
         setPosition(x, y);
+        addToWorld();
     }
 
     @Override
