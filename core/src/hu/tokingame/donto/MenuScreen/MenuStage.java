@@ -50,11 +50,11 @@ public class MenuStage extends MyStage {
             }
         });
 
-        addActor(new BackgroundTextButton("Játék"){
+        addActor(new BackgroundTextButton(" Játék "){
             @Override
             protected void init() {
                 super.init();
-                this.setPosition(Globals.WORLD_WIDTH/2-this.getWidth()/2,500);
+                this.setPosition(Globals.WORLD_WIDTH/2-this.getWidth()/2,400);
                 addListener(new ClickListener(){
                     @Override
                     public void clicked(InputEvent event, float x, float y) {
@@ -64,11 +64,11 @@ public class MenuStage extends MyStage {
                 });
             }
         });
-        addActor(new BackgroundTextButton("Legjobb eredmények"){
+        addActor(new BackgroundTextButton("  Legjobb eredmények  "){
             @Override
             protected void init() {
                 super.init();
-                setPosition(Globals.WORLD_WIDTH-500, 10);
+                setPosition(10, 10);
                 addListener(new ClickListener(){
                     @Override
                     public void clicked(InputEvent event, float x, float y) {

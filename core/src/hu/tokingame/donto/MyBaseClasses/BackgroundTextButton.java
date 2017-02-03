@@ -10,7 +10,7 @@ public class BackgroundTextButton extends MyTextButton {
     private int color;
 
     public BackgroundTextButton(String text, int c) {
-        super(text);
+        super(" "+text+" ");
         color = c;
         setFont(Assets.manager.get(Assets.ANTON_FONT_B));
 
@@ -23,7 +23,7 @@ public class BackgroundTextButton extends MyTextButton {
     public BackgroundTextButton(String text){
         super(" "+text+" ");
         setFont(Assets.manager.get(Assets.ANTON_FONT_B));
-        //setTexture(Assets.manager.get(Assets.BUTTON_BG));
+        setTexture(Assets.manager.get(Assets.GOMB_HATTER));
     }
 
     @Override
