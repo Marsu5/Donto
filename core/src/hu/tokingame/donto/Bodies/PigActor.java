@@ -1,5 +1,6 @@
 package hu.tokingame.donto.Bodies;
 
+import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.BodyDef;
 import com.badlogic.gdx.physics.box2d.World;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
@@ -9,7 +10,6 @@ import hu.tokingame.donto.Game1.GameStage;
 import hu.tokingame.donto.Global.Assets;
 import hu.tokingame.donto.Global.Globals;
 import hu.tokingame.donto.MyBaseClasses.OneSpriteStaticActor;
-import hu.tokingame.donto.MyBaseClasses.ShapeType;
 import hu.tokingame.donto.MyBaseClasses.WorldActorGroup;
 import hu.tokingame.donto.MyBaseClasses.WorldBodyEditorLoader;
 
@@ -22,6 +22,14 @@ public class PigActor extends WorldActorGroup {
     private GameStage gameStage;
     private float rotateRef;
 
+    private float deadX;
+    private float deadY;
+    private boolean addDead = false;
+    private Vector2 deadVol;
+
+    private World world;
+    private WorldBodyEditorLoader loader;
+
     public PigActor(World world, WorldBodyEditorLoader loader, float x, float y, GameStage stage) {
         super(world, loader, "sample", BodyDef.BodyType.DynamicBody, 0, 0.2f, 5, false);
         addToWorld();
@@ -32,7 +40,10 @@ public class PigActor extends WorldActorGroup {
         addActor(actor);
         setPosition(x,y);
 
-        rotateRef = Globals.randomF(-300, 300);
+        this.loader = loader;
+        this.world = world;
+
+        rotateRef = Globals.randomF(-300, 300) * 10;
 
         addListener(new ClickListener(){
             @Override
@@ -44,16 +55,30 @@ public class PigActor extends WorldActorGroup {
     }
 
     public void die(){
+        deadX = getX();
+        deadY = getY();
+        deadVol = getBody().getLinearVelocity();
         gameStage.incrementScore();
         gameStage.minusPigCount();
-        gameStage.incrmentDeadPigsToAdd();
+        addDead = true;
         removeFromWorld();
     }
 
     @Override
     public void act(float delta) {
         super.act(delta);
+        if(addDead){
+            DeadPigButt butt;
+            DeadPigHead head;
+            gameStage.addActor(head = new DeadPigHead(world,loader,deadX,deadY));
+            gameStage.addActor(butt = new DeadPigButt(world,loader,deadX,deadY));
+            head.getBody().applyTorque(rotateRef * delta, true);
+            butt.getBody().applyTorque(-rotateRef * delta, true);
+            head.getBody().setLinearVelocity(deadVol);
+            butt.getBody().setLinearVelocity(deadVol);
+            addDead = false;
+        }
         if(getBody() == null) return;
-        getBody().applyTorque(rotateRef * delta * 10, true);
+        getBody().applyTorque(rotateRef * delta, true);
     }
 }

@@ -18,8 +18,8 @@ public class DeadPigButt extends WorldActorGroup {
     public DeadPigButt(World world, WorldBodyEditorLoader loader, float x, float y) {
         super(world, loader, "sample", BodyDef.BodyType.DynamicBody, 0, 0.2f, 5, false);
         actor = new OneSpriteStaticActor(Assets.manager.get(Assets.MALAC_SEGG));
-        setSize(2f,1f);
-        actor.setSize(2f,1f);
+        setSize(1f,1f);
+        actor.setSize(1f,1f);
         addActor(actor);
         setPosition(x,y);
         addToWorld();

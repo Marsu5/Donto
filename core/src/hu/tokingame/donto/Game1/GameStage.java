@@ -49,8 +49,6 @@ public class GameStage extends MyStage {
     private int pigCount = 0;
     private float lastPigTime = 0;
 
-    private float deadPigsToAdd = 0;
-
     int rdm(int a, int b){return (int)(Math.random()*(b-a+1)+a);}
     float randomF(float a, float b){return (float) (Math.random()*(b-a+1)+a);}
 
@@ -139,12 +137,6 @@ public class GameStage extends MyStage {
             pigCount++;
         }
 
-        while(deadPigsToAdd > 0){
-            addActor(new DeadPigButt(world,loader,5,5));
-            addActor(new DeadPigHead(world,loader,5,5));
-            deadPigsToAdd--;
-        }
-
         if(hp == 0){
             game.setScreen(new DeathScreen(game,score));
             System.out.println("dead");
@@ -184,10 +176,6 @@ public class GameStage extends MyStage {
         System.out.println("k"+score);
         score++;
         System.out.println("v"+score);
-    }
-
-    public void incrmentDeadPigsToAdd(){
-        deadPigsToAdd++;
     }
 
     public int getHp() {
