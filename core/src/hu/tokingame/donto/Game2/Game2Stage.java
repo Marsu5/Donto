@@ -119,7 +119,7 @@ public class Game2Stage extends MyStage {
         elapsedTime  += delta;
 
         if(lastPigTime == 0) lastPigTime = elapsedTime;
-        if(elapsedTime - lastPigTime >= randomF(5,10)){
+        if(elapsedTime - lastPigTime >= randomF(3,6)){
             lastPigTime = elapsedTime;
             switch(Globals.random(1,3)){
                 case 1: pig1.show(upTime); h(1); break;
