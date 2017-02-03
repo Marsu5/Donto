@@ -88,7 +88,7 @@ public class MenuStage extends MyStage {
                     @Override
                     public void clicked(InputEvent event, float x, float y) {
                         super.clicked(event, x, y);
-                        System.exit(0);
+                        game.setScreen(new ExitScreen(game));
                     }
                 });
             }
