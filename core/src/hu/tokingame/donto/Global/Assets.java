@@ -119,6 +119,7 @@ public class Assets {
         manager.load(PIA1);
         manager.load(PIA2);
         manager.load(PIA3);
+        manager.load(PEN);
         manager.load(KENYER);
         manager.load(SPEAKER);
         manager.load(NOSPEAKER);
