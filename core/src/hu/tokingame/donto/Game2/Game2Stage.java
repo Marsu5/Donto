@@ -55,7 +55,7 @@ public class Game2Stage extends MyStage {
         super(new ExtendViewport(16,9,new OrthographicCamera(16,9)), new SpriteBatch(), game);
         controlStage = new ControlStage(game, this);
         inputMultiplexer.addProcessor(this);
-        //inputMultiplexer.addProcessor(controlStage);
+        inputMultiplexer.addProcessor(controlStage);
         Gdx.input.setInputProcessor(inputMultiplexer);
     }
     @Override
@@ -156,7 +156,7 @@ public class Game2Stage extends MyStage {
     }
 
     public void pigTapped(){
-        
+
     }
 
 }
