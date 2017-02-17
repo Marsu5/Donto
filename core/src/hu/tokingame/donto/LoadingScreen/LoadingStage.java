@@ -7,6 +7,7 @@ import hu.tokingame.donto.Global.Assets;
 import hu.tokingame.donto.Global.Globals;
 import hu.tokingame.donto.MyBaseClasses.MyStage;
 import hu.tokingame.donto.MyBaseClasses.OneSpriteAnimatedActor;
+import hu.tokingame.donto.MyBaseClasses.OneSpriteStaticActor;
 import hu.tokingame.donto.MyGdxGame;
 
 /**
@@ -26,6 +27,15 @@ public class LoadingStage extends MyStage {
     @Override
     public void init() {
         loadingStage = this;
+
+        addActor(new OneSpriteStaticActor("textures/PEN.png"){
+            @Override
+            public void init() {
+                super.init();
+                setSize(200, 200);
+                setPosition(Globals.WORLD_WIDTH/2-this.getWidth()/2, 50);
+            }
+        });
 
         addActor(palinka = new OneSpriteAnimatedActor("atlas/loading.txt"){
             @Override
