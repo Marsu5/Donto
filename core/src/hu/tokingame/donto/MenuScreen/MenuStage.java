@@ -84,7 +84,7 @@ public class MenuStage extends MyStage {
                 });
             }
         });
-        addActor(new BackgroundTextButton(" Hogyan játsz "){
+        addActor(new BackgroundTextButton(" Hogyan játssz "){
             @Override
             protected void init() {
                 super.init();

@@ -105,7 +105,7 @@ public class GameStage extends MyStage {
                     pigCount--;
                     if(powerUP) return;
                     hp--;
-                    System.out.println("collision");
+                    System.out.println("kiesett a malac");
                 }
                 
             }
